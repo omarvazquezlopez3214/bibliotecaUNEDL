@@ -1,0 +1,238 @@
+*{
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+header{
+	width: 100%;
+    background: linear-gradient(to right, #000, #000 );
+    opacity: 0.9;
+}
+/*logo y texto */
+.menu {
+	width: 100%;
+	max-width: 1300px;
+	margin: auto;
+	padding: .5em 0;  
+	display : flex;
+	justify-content: space-between.	
+}
+
+.contenido-menu .logo .logo-nombre img {
+	width: 250px;
+	margin-top: 0.5px;
+}
+
+.menu .contenido-menu .logo .btn-menu {
+	display: none;
+	text-decoration: none;
+	color: #FFFFFF;
+	font-size: 30px;
+}
+
+.menu .contenido-menu .logo .logo-nombre a {
+	text-decoration: none;
+	color: #F1C40F;
+	font-size: 42px;
+	margin-left: 8px;
+	margin-top: 17.5px;
+	float: right;
+	font-weight: normal;	
+}
+/*menu de navegacion*/
+
+.menu > .menu-navegacion{
+	width: 500px;
+	height: 50px;
+	/*background: red;*/
+	margin-top: 15px;
+	margin-left: 90px;
+}
+
+.menu-navegacion ul {
+	list-style: none;
+	
+}
+
+.menu-navegacion > li{
+	display: inline-block;
+}
+
+.menu-navegacion > li > a {
+	display: block;
+	padding: 5px 10px;
+	color: #FFFFFF;
+	font-family: "Century Gothic";
+	font-size: 13px;
+	text-decoration: none;	
+}
+.menu-navegacion li a:hover{
+	color: #F1C40F;
+	transition: all .03s;
+}
+
+.logo-unedl img {
+	width: 40px;
+	height: 40px;
+	float: right;
+	margin-left: 8px;
+}
+
+
+/*Submenu de libro*/
+.submenu {
+	position: absolute;
+	background: linear-gradient(to right, #000, #000 );
+	position: absolute;
+	visibility: hidden;
+	z-index: 11;
+}
+
+.submenu li a{
+	display: block;
+	padding: 15px;
+	color: #FFFFFF;
+	font-family: "Century Gothic";
+	text-decoration: none;
+}
+
+.menu-navegacion li:hover .submenu {
+	visibility: visible;
+}
+
+
+.banner {
+	position:relative;
+	background: url('../img/estudiante.jpg');
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	max-width: 1200px;
+	top: 52px;
+	margin: auto;
+	height: 400px;
+	color: #FFFFFF;
+}
+
+.banner .bg-detalles {
+	position:relative;
+	width: 100%;
+	height: 100%;
+	color: #1C2652;
+	text-align: center;
+}
+
+.banner .bg-detalles .detalles h1 {
+	font-size: 40px;
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+
+.banner .bg-detalles .detalles a {
+	display: inline-block;
+	text-decoration: none;
+	color: #000;
+	font-size: 20px;
+	border: 2px solid #000;
+	padding: 10px 25px;
+	border-radius: 10px;
+	transition: .3s;
+}
+
+.banner .bg-detalles .detalles a {
+	background: rgba(174,13,54,.7);
+}
+
+
+.main
+{
+	width: 90%;
+	max-width: 1000px;
+	margin: 20px auto;
+}
+
+.slides
+{
+	width: 100%;
+}
+
+.slidesjs-control {
+	height: 160px;
+}
+
+.slides img 
+{
+	width: 100%;
+}
+
+.slidesjs-pagination 
+{
+	background: linear-gradient(to right, #000, #1c2652);
+	list-style: none;
+	overflow: hidden;
+}
+
+.slidesjs-pagination li 
+{
+	float: left;
+}
+
+.slidesjs-pagination li a 
+{
+	display: block;
+	padding: 10px 20px;
+	color: #fff;
+	text-decoration: none;
+}
+
+.slidesjs-pagination li a:hover {
+	background: #3A3EB2;
+}
+
+.slides .active {
+	background: #3A3EB2;
+}
+
+.slidesjs-navigation {
+	background: #1c2652;
+	color: #FFFFFF;
+	text-decoration: none;
+	display: inline-block;
+	padding: 10px 20px;
+	float: right;
+}
+
+
+/* pie de pagina*/
+.footer {
+	background: linear-gradient(to right, #000, #1c2652);
+	opacity: .9;
+	padding: 10px;
+	height: 200px;
+}
+
+.footer .texto-footer {
+	width: 400px;
+	height: 50px;
+	color: #EEEEEE;
+}
+
+.footer .face img {
+	width: 40px;
+	float: right;
+	position: relative;
+	margin-top: 30px;
+}
+
+
+/*Responsivo*/
+@media screen and (max-width: 900px){
+	
+}
