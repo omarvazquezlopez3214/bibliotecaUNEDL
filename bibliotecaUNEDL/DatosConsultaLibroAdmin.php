@@ -1,6 +1,6 @@
 <?php
 	@session_start();
-	if(!isset($_SESSION["usuario"])) 
+	if(!isset($_SESSION["matricula"])) 
 	{
 		header("Location: log-in.php");
 	}
@@ -29,11 +29,18 @@
 			  </div>
 			
 				<ul class="menu-navegacion">
-                    <li><a href="http://unedl.edu.mx/portal/contacto.php?">Contacto</a></li>
-                    <li><a href="ConsultaAdmin.php">Consultar libro</a></li>
-                    <li><a href="MenuAdmin.php">Inicio</a></li>
-                    <li><a><?php echo $_SESSION["usuario"]; ?></a></li>
+                    <li><a href="#">Libros</a>
+                    	<ul class="submenu">
+                    		<li><a href="altalibro.php">Dar de alta</a></li>
+                    		<li><a href="bajalibro.php">Dar de baja</a></li>
+                    	</ul>
+                    </li>
+                    <li><a href="ConsultaAdmin.php">Consultar Libro</a></li>
+                    <li><a href="reservados.php">Reservados</a></li>
+                    <li><a href="prestamos.php">Prestamos</a></li>
+                    <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
+                    <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
 			</header>

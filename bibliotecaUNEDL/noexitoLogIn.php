@@ -11,7 +11,7 @@
 		<img src="img/índice.jpg" />
 	</div>
 	<div class="registroexitoso">
-	<h3>USUARIO O CONTRASEÑA NO VALIDOS.</h3>
+	<h3>MATRICULA/NUMERO COLABORADOR O CONTRASEÑA NO VALIDOS.</h3>
 	<br />
 	<h3>Boton para regresar.</h3>
 	</div>

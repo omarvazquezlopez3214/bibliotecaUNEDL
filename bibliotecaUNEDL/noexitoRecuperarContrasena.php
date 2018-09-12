@@ -11,7 +11,7 @@
 		<img src="img/índice.jpg" />
 	</div>
 	<div class="registroexitoso">
-	<h3>EL USUARIO O EL CORREO ELECTRONICO ESTAN INCORRECTOS.</h3>
+	<h3>LA MATRICULA/NUMERO COLABORADOR O EL CORREO ELECTRONICO ESTAN INCORRECTOS.</h3>
 	<br />
 	<h3>Boton para regresar.</h3>
 	</div>

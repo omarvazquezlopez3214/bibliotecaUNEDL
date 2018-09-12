@@ -20,8 +20,8 @@
 	}else
 	{
 	
-	$sql = "INSERT INTO reservaLibros(id_libro, titulo, autor, editorial, ano, usuario, nombre_completo , correo_electronico, matricula, carrera, telefono, fecha_reservacion) 
-    VALUES ('".$fila['id']."','".$fila['titulo']."','".$fila['autor_autores']."','".$fila['editorial']."','".$fila['ano']."','".$_SESSION["usuario"]."','".$_SESSION["nombrecompleto"]."','".$_SESSION["correoelectronico"]."' ,'".$_SESSION["matricula"]."','".$_SESSION["carrera"]."','".$_SESSION["telefono"]."', now())";
+	$sql = "INSERT INTO reservaLibros(id_libro, titulo, autor, plantel, ano, nombre, apellidos , correo_electronico, matricula, carrera, telefono, fecha_reservacion) 
+    VALUES ('".$fila['id']."','".$fila['titulo']."','".$fila['autor_autores']."','".$fila['plantel']."','".$fila['ano']."','".$_SESSION["nombre"]."','".$_SESSION["apellidos"]."','".$_SESSION["correoelectronico"]."' ,'".$_SESSION["matricula"]."','".$_SESSION["carrera"]."','".$_SESSION["telefono"]."', now())";
     //Se ejecuta la sentencia de query
 	if($conn->query ($sql) === TRUE)
 	{

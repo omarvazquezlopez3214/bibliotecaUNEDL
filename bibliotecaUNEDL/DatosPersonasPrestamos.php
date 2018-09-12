@@ -12,7 +12,7 @@
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title>Personas con libros reservados</title>
+		<title>Personas con libros prestados</title>
 		<meta name="description" content="">
 		<meta name="author" content="Omar">
 		<link href="css/estilos.css" rel="stylesheet" type="text/css" />
@@ -51,13 +51,13 @@
 			</header>
 			<div class="contenedor-form">
 			 <div>
-			 <h1>Prestamos</h1>
-			 <h4>Persona y sus libros reservados.</h4>
+			 <h1>Devoluciones</h1>
+			 <h4>Persona y sus libros prestados.</h4>
 			 <br />
-			 <form action="aceptarReservaPersonas.php" method="post">
-			 	<select id="personaReservaLibro" name="personaLibrosEnReserva" class="contenedor-form" required>
+			 <form action="aceptarPrestamoPersonas.php" method="post">
+			 	<select id="personaReservaLibro" name="personaLibrosEnPrestamo" class="contenedor-form" required>
 			 		<?php
-			 		echo '<option value="">Seleccione un libro reservado del usuario:</option>';
+			 		echo '<option value="">Seleccione un libro prestado del usuario:</option>';
 			 		include("conexionbdd.php");
 					if($conn->connect_error)
 					{
@@ -65,16 +65,17 @@
 					 								.$conn->connect_error . "<br />");
 					}
 					//Recuperar las variables
-					$validarmatricula = "SELECT * FROM reservalibros";
+					$matricula=$_GET['matricula'];
+					$validarmatricula = "SELECT * FROM prestamoslibros WHERE matricula  = '".$matricula."' ";
 					if($resultado = $conn->query($validarmatricula))
 					{
 						while($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC))
 						{
-						echo '<option value ="'.$row[id_libro].'">'.$row[titulo].' - '.$row[autor].' - '.$row[plantel].' - '.$row[ano].' - '.$row[nombre].' - '.$row[apellidos].' - '.$row[correo_electronico].' - '.$row[matricula].' - '.$row[carrera].' - '.$row[telefono].' - '.$row[fecha_reservacion].'</option>';
+						echo '<option value ="'.$row[id_libro].'">'.$row[titulo].' - '.$row[autor].' - '.$row[plantel].' - '.$row[ano].' - '.$row[nombre].' - '.$row[apellidos].' - '.$row[correo_electronico].' - '.$row[matricula].' - '.$row[carrera].' - '.$row[telefono].' - '.$row[fecha_prestamo].'</option>';
 						}	
 					}else
 					{
-						header("noexitoPersonasReservadas.php");
+						header("Location: noexitoPersonasPrestamo.php");
 					}
 
 					mysqli_close($conn);
@@ -84,7 +85,7 @@
                 
                 <input type="submit" value="Aceptar "> <br /> <br />
                 
-                <input type="button" value="Cancelar" onclick="location.href='reservados.php'">
+                <input type="button" value="Cancelar" onclick="location.href='prestamos.php'">
 				</form>
             </div>
 		</div>

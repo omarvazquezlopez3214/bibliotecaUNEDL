@@ -16,9 +16,9 @@
 	$contrasenaemisor = '@unedlvirtuallibrary';
 	$nombreemisor = 'BibliotecaUnedl';
 	$correoreceptor = $_POST['correo'];
-	$usuarioreceptor = $_POST['usuario'];
+	$usuarioreceptor = $_POST['matricula'];
 	
-	$validarcorreo = "SELECT * FROM usuarios WHERE correo_electronico = '".$correoreceptor."' AND usuario = '".$usuarioreceptor."'";
+	$validarcorreo = "SELECT * FROM usuarios WHERE correo_electronico = '".$correoreceptor."' AND matricula = '".$usuarioreceptor."'";
 	
 	$resultado = $conn->query($validarcorreo);
 	$row = mysqli_num_rows($resultado);

@@ -9,13 +9,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Página alta de libro exitoso</title>
+    <title>No exito persona con prestamo</title>
     <link rel="stylesheet" href="css/estilos.css" />
 	    <link rel="stylesheet" href="css/estilos2.css" />
 </head>
 <body>
 	<header>
-				<nav class="menu">
+			<nav class="menu">
 			  <div class="contenido-menu">
 				<div class="logo">
 					<div class="logo-nombre">
@@ -48,19 +48,13 @@
 		<img src="img/índice.jpg" />
 	</div>
 	<div class="registroexitoso">
-	<h3>TU LIBRO SE DIO DE ALTA CON EXITO</h3>
+	<h3>ESTA PERSONA NO TIENE NINGUN LIBRO PRESTADO.</h3>
 	<br />
-	<h3>Boton para regresar al menu principal.</h3>
+	<h3>Boton para regresar.</h3>
 	</div>
 	<div class="logo">
-		<a href="MenuAdmin.php"><img src="img/boton-regresar.png" width="246" height="80" /></a> <!--AQUI VA LA PAGINA DE MENU EN VES DE INDEX.HTML-->
+		<a href="prestamos.php"><img src="img/boton-regresar.png" width="246" height="80" /></a>
 	</div>
 	<br />
-	<div class="registroexitoso">
-    <h3>Boton para agregar otro libro.</h3>
-	</div>
-	<div class="logo">
-		<a href="altalibro.php"><img src="img/boton_libros.png" width="128" height="128" /></a>
-	</div>
 </body>
 </html>

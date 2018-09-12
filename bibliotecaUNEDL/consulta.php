@@ -1,6 +1,6 @@
 <?php
 	@session_start();
-	if(!isset($_SESSION["usuario"])) 
+	if(!isset($_SESSION["matricula"])) 
 	{
 		header("Location: log-in.php");
 	}
@@ -33,7 +33,7 @@
                     <li><a href="consulta.php">Consultar libro</a></li>
                     <li><a href="MenuUsuario.php">Inicio</a></li>
                      <li><a href="dewey.php" target="_blank">Dewey</a></li>
-                    <li><a><?php echo $_SESSION["usuario"]; ?></a></li>
+                    <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
 				</ul>
 			 </nav>

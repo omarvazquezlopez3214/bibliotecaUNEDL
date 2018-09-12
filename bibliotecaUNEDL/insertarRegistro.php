@@ -6,8 +6,8 @@
 	 								.$conn->connect_error . "<br />");
 	}
 	//Recuperar las variables
-	$user=$_POST['usuario'];
 	$name=$_POST['nombre'];
+	$apellidos=$_POST['apellidos'];
 	$pass=$_POST['contrasena'];
 	$email=$_POST['correo'];
 	$matri=$_POST['matricula'];
@@ -29,16 +29,6 @@
 	{
 		header("Location: noexitoMatricula.php");
 	}else{
-
-
-	$validarUsuario = "SELECT usuario FROM usuarios WHERE usuario = '".$user."' ";
-	$resultado = $conn->query($validarUsuario);
-	$row = mysqli_num_rows($resultado);
-	if( $row == 1)
-	{
-		header("Location: noexitoUsuario.php");
-	}else
-	{
 	
 	if(preg_match("/^([0-9]{2}[A|B][L])[0-9]{7}$/", $matri))
 	{
@@ -49,11 +39,11 @@
 		}
 	if($tipousuario == 'B')
 	{
-		$licenciatura = "Maestro o colaborador";
+		$licenciatura = "Colaborador";
 	}
 
-	$sql = "INSERT INTO usuarios(usuario, nombre_completo, contrasena, correo_electronico, matricula, carrera, telefono , tipo_usuario) 
-	VALUES ('".$user."','".$name."','".$pass."','".$email."','".$matri."','".$licenciatura."','".$telefono."','".$tipousuario."')";
+	$sql = "INSERT INTO usuarios(nombre, apellidos, contrasena, correo_electronico, matricula, carrera, telefono , tipo_usuario, fecha_registro) 
+	VALUES ('".$name."','".$apellidos."','".$pass."','".$email."','".$matri."','".$licenciatura."','".$telefono."','".$tipousuario."',now())";
     //Se ejecuta la sentencia de query
 	if($conn->query ($sql) === TRUE)
 	{
@@ -62,7 +52,7 @@
 	{
 		echo "<br /> Error : ". $sql . "<br />". $conn->error."<br />";
 				}
-			}
+			
 		}
 }
 	mysqli_close($conn);

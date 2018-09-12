@@ -9,7 +9,7 @@
 <html lang="en">
 	<head>
 	<meta charset="UTF-8">
-    <title>Personas con libros reservados</title>
+    <title>Personas con libros prestados</title>
     <link rel="stylesheet" href="css/estilos2.css">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -53,10 +53,10 @@
         	</div>
         	<div class="formulario">
 			<br />
-			<h1>Reservaciones de libros</h1>
-			<h4>Si quieres obtener todas las reservas de libros, solo presiona el boton de "Buscar todos".</h4>
+			<h1>Prestamos de libros</h1>
+			<h4>Si quieres obtener todas los prestamos de libros, solo presiona el boton de "Buscar todos".</h4>
 			<br />
-			 <form action="DatosPersonasReservadas.php" method="get">
+			 <form action="DatosPersonasPrestamos.php" method="get">
                 <input id="usuario" type="text" name="matricula" placeholder="Escriba la matricula del alumno *" required>
 
                 <input type="submit" value="Buscar por persona"> <br /> <br />
@@ -66,10 +66,10 @@
             </div>
             <div class="formulario">
 			<br />
-			<h1>Reservaciones de libros</h1>
-			<h4>Si quieres obtener todas las reservas de libros, solo presiona el boton de "Buscar todos".</h4>
+			<h1>Prestamos de libros</h1>
+			<h4>Si quieres obtener todas los prestamos de libros, solo presiona el boton de "Buscar todos".</h4>
 			<br />
-			 <form action="DatosPersonasReservadasTodos.php" method="get">
+			 <form action="DatosPersonasPrestamosTodos.php" method="get">
 
                 <input type="submit" value="Buscar todos"> <br /> <br />
                 

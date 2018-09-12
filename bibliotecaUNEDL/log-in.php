@@ -41,7 +41,7 @@
         <div id="logi" class="formulario">
             <h2>Inicia Sesión</h2>
             <form action="login.php" method="post">
-                <input type="text" name="us" placeholder="Usuario" required>
+                <input type="text" name="mn" placeholder="Matricula o Numero de colaborador" required>
                 <input type="password" name="pa" placeholder="Contraseña" required>
                 <input type="submit" value="Iniciar Sesión"> <br /> <br />
                 <input type="submit" value="Cancelar" onclick="location.href= 'MenuPrincipal.html'">
@@ -55,12 +55,10 @@
             <h4>(*) Campos obligatorios</h4>	
             	<br />
             <form id="registro" action="insertarRegistro.php" method="post">
-                <input type="text" name="usuario" placeholder="Usuario *"
-                maxlength="50" required pattern="[A-Za-z0-9]{5,50}" 
-                title="Se necesita almenos un numero y una letra minimo: 5 caracteres maximo: 50 caracteres, 
-                sin carácteres extraños [$%-%^@] y sin espacios">
+                <input type="text" name="nombre" placeholder="Nombre *"
+                maxlength="50" required>
                 
-                <input type="text" name="nombre" placeholder="Nombre completo *" 
+                <input type="text" name="apellidos" placeholder="Apellidos *" 
                 maxlength="50" required>
                 
                 <input type="password" name="contrasena" placeholder="Contraseña *" 
@@ -81,7 +79,7 @@
 
                 <br />
                 <div id="maestro" style="display: none">;
-    			<h4>Maestro o colaborador</h4>;
+    			<h4>Colaborador</h4>;
     			</div>
     			<div id="noexiste" style="display: none">;
     			<h4>No es una matricula valida</h4>;
@@ -117,7 +115,7 @@
         	<h2>Recupera tu contraseña</h2>
         	<form id="recuperarPassword" action="recuperarContrasena.php" method="post">
         		<input type="email" name= "correo" placeholder="Correo Electronico *" required>
-        		<input type="text" name= "usuario" placeholder="Usuario *" required>
+        		<input type="text" name= "matricula" placeholder="Matricula o Numero de colaborador *" required>
         		<input type="submit" value="Enviar">
         	</form>
         </div>

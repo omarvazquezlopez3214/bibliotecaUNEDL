@@ -1,6 +1,6 @@
 <?php
 	@session_start();
-	if(!isset($_SESSION["usuario"])) 
+	if(!isset($_SESSION["matricula"])) 
 	{
 		header("Location: log-in.php");
 	}
@@ -42,7 +42,8 @@
                     </li>
                     <li><a href="ConsultaAdmin.php">Consultar Libro</a></li>
                     <li><a href="reservados.php">Reservados</a></li>
-                    <li><a><?php echo $_SESSION["usuario"]; ?></a></li>
+                    <li><a href="prestamos.php">Prestamos</a></li>
+                    <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
                     <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
@@ -64,13 +65,13 @@
 					 								.$conn->connect_error . "<br />");
 					}
 					//Recuperar las variables
-					$usuario=$_GET['usuarioReserva'];
-					$validarusuario = "SELECT * FROM reservalibros WHERE usuario  = '".$usuario."' ";
-					if($resultado = $conn->query($validarusuario))
+					$matricula=$_GET['matricula'];
+					$validarmatricula = "SELECT * FROM reservalibros WHERE matricula  = '".$matricula."' ";
+					if($resultado = $conn->query($validarmatricula))
 					{
 						while($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC))
 						{
-						echo '<option value ="'.$row[id_libro].'">'.$row[titulo].' - '.$row[autor].' - '.$row[editorial].' - '.$row[ano].' - '.$row[usuario].' - '.$row[nombre_completo].' - '.$row[correo_electronico].' - '.$row[matricula].' - '.$row[carrera].' - '.$row[telefono].' - '.$row[fecha_reservacion].'</option>';
+						echo '<option value ="'.$row[id_libro].'">'.$row[titulo].' - '.$row[autor].' - '.$row[plantel].' - '.$row[ano].' - '.$row[nombre].' - '.$row[apellidos].' - '.$row[correo_electronico].' - '.$row[matricula].' - '.$row[carrera].' - '.$row[telefono].' - '.$row[fecha_reservacion].'</option>';
 						}	
 					}else
 					{

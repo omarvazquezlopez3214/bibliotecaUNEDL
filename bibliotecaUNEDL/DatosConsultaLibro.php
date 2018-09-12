@@ -1,6 +1,6 @@
 <?php
 	@session_start();
-	if(!isset($_SESSION["usuario"])) 
+	if(!isset($_SESSION["matricula"])) 
 	{
 		header("Location: log-in.php");
 	}
@@ -32,7 +32,7 @@
                     <li><a href="http://unedl.edu.mx/portal/contacto.php?">Contacto</a></li>
                     <li><a href="consulta.php">Consultar libro</a></li>
                     <li><a href="MenuUsuario.php">Inicio</a></li>
-                    <li><a><?php echo $_SESSION["usuario"]; ?></a></li>
+                    <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
 				</ul>
 			 </nav>
@@ -45,7 +45,7 @@
 			
 			<h1>Datos del libro</h1>
 			<br />
-			<p>CodigoDewey*Titulo-Autor-Editorial-Plantel-Año-Estatus</p>
+			<p>TITULO-AUTOR-PLANTEL-AÑO-ESTATUS</p>
 			 <form action="aceptarReservaLibro.php" method="post">
 			 	<select id="librosConsulta" name="consultaLibros" class="contenedor-form" required>
 			 		<option value="">Seleccione un libro de la consulta:</option>
@@ -68,8 +68,7 @@
 					{
 						while($row = mysqli_fetch_array($result))
 						{
-							echo '<option value ="'.$row[id].'">'.$row[codigo_dewey].' * '.$row[titulo].' - '.$row[autor_autores].' - '.$row[editorial].' - '.$row[plantel].' - '.$row[ano].' - '.$row[estatus].'</option>';
-							
+							echo '<option value ="'.$row[id].'"> * '.$row[titulo].' - '.$row[autor_autores].' - '.$row[plantel].' - '.$row[ano].' - '.$row[estatus].'</option>';
 						}	
 					}else
 					{

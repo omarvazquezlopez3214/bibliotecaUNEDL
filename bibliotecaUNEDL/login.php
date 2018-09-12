@@ -5,11 +5,11 @@
 		die("<br /> Fallo el intento de conexión a la base de datos: "
 	 								.$conn->connect_error . "<br />");
 	}
-	$usuario = $_POST['us'];
+	$matricula_colaborador = $_POST['mn'];
 	$contrasena = $_POST['pa'];
 	
 	
-	$consultaUsuario = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND contrasena = '$contrasena'";
+	$consultaUsuario = "SELECT * FROM usuarios WHERE matricula = '$matricula_colaborador' AND contrasena = '$contrasena'";
 	$result = $conn ->query($consultaUsuario);
 	if($result -> num_rows > 0)
 	{
@@ -17,9 +17,9 @@
 		{
 			@session_start();
 			$_SESSION['loggedin'] = true;
-			$_SESSION["usuario"]=$row["usuario"];
+			$_SESSION["nombre"]=$row["nombre"];
 			$_SESSION["idusuario"]=$row["id_usuario"];
-			$_SESSION["nombrecompleto"]=$row["nombre_completo"];
+			$_SESSION["apellidos"]=$row["apellidos"];
 			$_SESSION["correoelectronico"]=$row["correo_electronico"];
 			$_SESSION["matricula"]=$row["matricula"];
 			$_SESSION["carrera"]=$row["carrera"];
