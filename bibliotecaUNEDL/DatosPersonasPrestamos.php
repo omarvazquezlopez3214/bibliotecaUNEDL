@@ -81,6 +81,14 @@
 					mysqli_close($conn);
 					
 			 		?>
+			 		
+			 	</select>
+			 	<select id="personaReservaLibro" name="personaEstatusEnPrestamo" class="contenedor-form" required>
+			 	<option value="">Selecciona el estatus para la devolucion del libro *</option>
+			 	<option value="DISPONIBLE">Disponible</option>
+			 	<option value="CONSULTA INTERNA">Consulta Interna</option>
+			 	<option value="RESERVADO">Reservado</option>
+			 	<option value="PRESTAMO">Prestamo</option>
 			 	</select>
                 
                 <input type="submit" value="Aceptar "> <br /> <br />

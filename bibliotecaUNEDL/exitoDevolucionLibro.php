@@ -60,7 +60,7 @@
     <h3>Boton para consultar otra persona.</h3>
 	</div>
 	<div class="logo">
-		<a href="reservados.php"><img src="img/boton_libros.png" width="128" height="128" /></a>
+		<a href="prestamos.php"><img src="img/boton_libros.png" width="128" height="128" /></a>
 	</div>
 </body>
 </html>

@@ -69,7 +69,7 @@
 				{
 					$validarlibro = "SELECT * FROM libros WHERE titulo LIKE '%".$busqueda."%' ";
 					$result = $conn ->query($validarlibro);
-					if($result-> num_rows > 1)
+					if($result-> num_rows > 0)
 					{
 						while($row = mysqli_fetch_array($result))
 						{

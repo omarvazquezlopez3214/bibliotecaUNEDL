@@ -14,13 +14,27 @@
 	$sqlestado = "SELECT * FROM libros WHERE id = '".$consulta."'";
 	$result = $conn->query($sqlestado);
 	$fila = mysqli_fetch_array($result, MYSQLI_ASSOC);
-	if($fila['estatus'] != "DISPONIBLE")
+	if($fila['estatus'] != "DISPONIBLE" || $fila['estatus'] == "CONSULTA INTERNA")
 	{
 		header("Location: noexitoReservaLibro.php");
 	}else
 	{
 	
-	$sql = "INSERT INTO reservaLibros(id_libro, titulo, autor, plantel, ano, nombre, apellidos , correo_electronico, matricula, carrera, telefono, fecha_reservacion) 
+	$sqlreservas = "SELECT * FROM reservalibros WHERE matricula = '".$_SESSION["matricula"]."' ";
+	$resu = $conn->query($sqlreservas);
+	$sqlprestamos = "SELECT * FROM prestamoslibros WHERE matricula = '".$_SESSION["matricula"]."' ";
+	$res = $conn->query($sqlprestamos);
+	$f = $resu-> num_rows;
+	$p = $res -> num_rows;
+
+	$suma = $f + $p;
+	//$suma = $row + $fil;
+	if($suma >= 3)
+	{
+		header("Location: noexitoMaximoLibros.php");
+	}else
+	{
+	$sql = "INSERT INTO reservalibros(id_libro, titulo, autor, plantel, ano, nombre, apellidos , correo_electronico, matricula, carrera, telefono, fecha_reservacion) 
     VALUES ('".$fila['id']."','".$fila['titulo']."','".$fila['autor_autores']."','".$fila['plantel']."','".$fila['ano']."','".$_SESSION["nombre"]."','".$_SESSION["apellidos"]."','".$_SESSION["correoelectronico"]."' ,'".$_SESSION["matricula"]."','".$_SESSION["carrera"]."','".$_SESSION["telefono"]."', now())";
     //Se ejecuta la sentencia de query
 	if($conn->query ($sql) === TRUE)
@@ -36,6 +50,7 @@
 	{
 		echo "<br /> Error : ". $sql . "<br />". $conn->error."<br />";
 	}
+}
 	mysqli_close($conn);
 	}
 ?>

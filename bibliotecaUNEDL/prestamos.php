@@ -73,7 +73,7 @@
 
                 <input type="submit" value="Buscar todos"> <br /> <br />
                 
-                <input type="submit" value="Cancelar" onclick="location.href = 'MenuAdmin.php'">
+                <input type="button" value="Cancelar" onclick="location.href = 'MenuAdmin.php'">
               </form>
             </div>
           
