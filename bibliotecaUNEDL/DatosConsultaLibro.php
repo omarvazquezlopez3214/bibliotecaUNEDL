@@ -45,7 +45,7 @@
 			
 			<h1>Datos del libro</h1>
 			<br />
-			<p>TITULO-AUTOR-PLANTEL-AÑO-ESTATUS</p>
+			<p>*TITULO-AUTOR-PLANTEL-AÑO-ESTATUS</p>
 			 <form action="aceptarReservaLibro.php" method="post">
 			 	<select id="librosConsulta" name="consultaLibros" class="contenedor-form" required>
 			 		<option value="">Seleccione un libro de la consulta:</option>
@@ -83,7 +83,7 @@
 					{
 						while($row = mysqli_fetch_array($result))
 						{
-							echo '<option value ="'.$row[id].'">'.$row[codigo_dewey].' * '.$row[titulo].' - '.$row[autor_autores].' - '.$row[editorial].' - '.$row[plantel].' - '.$row[ano].' - '.$row[estatus].'</option>';
+							echo '<option value ="'.$row[id].'"> * '.$row[titulo].' - '.$row[autor_autores].' - '.$row[editorial].' - '.$row[plantel].' - '.$row[ano].' - '.$row[estatus].'</option>';
 						}
 					}else
 					{
