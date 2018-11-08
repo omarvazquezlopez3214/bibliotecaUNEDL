@@ -20,8 +20,8 @@
 			  <div class="contenido-menu">
 				<div class="logo">
 					<div class="logo-nombre">
-						<img src="img/unedl.png" alt="" />
-						<a href="MenuAdmin.php" >BIBLIOTECA </a>
+						<img src="img/unedl2.png" alt="" />
+						<a href="MenuAdmin.php" ></a>
 					</div>
 					<div class="icono-menu">
 						<a href="#" id="btn-menu" class="btn-menu"><samp class="fa fa-bars"></samp></a>
@@ -44,13 +44,14 @@
                     <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+			 <div class="cinta"></div>
 			</header>
 		<div class="contenedor-form">
 			<div class="toggle2">
              <span></span>
         	 </div>
 			 <div class="formulario">
-			 <h1>Baja de Libros</h1>
+			 <h1><a style="font-family: Calibri;">Baja de Libros</h1>
 			 <h4>(*) Campos obligatorios</h4>
 			 <br />
 			 <form action="bajaLibros.php" method="get">

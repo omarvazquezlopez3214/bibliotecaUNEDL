@@ -11,7 +11,6 @@
     <meta charset="UTF-8">
     <title>Página reserva libro exitosa</title>
     <link rel="stylesheet" href="css/estilos.css" />
-	    <link rel="stylesheet" href="css/estilos2.css" />
 </head>
 <body>
 	<header>
@@ -19,8 +18,8 @@
 			  <div class="contenido-menu">
 				<div class="logo">
 					<div class="logo-nombre">
-						<img src="img/unedl.png" alt="" />
-						<a href="MenuAdmin.php" >BIBLIOTECA </a>
+						<img src="img/unedl2.png" alt="" />
+						<a href="MenuUsuario.php" ></a>
 					</div>
 					<div class="icono-menu">
 						<a href="#" id="btn-menu" class="btn-menu"><samp class="fa fa-bars"></samp></a>
@@ -36,13 +35,12 @@
                     <li><a href="logout.php">Cerrar sesion</a></li>
 				</ul>
 			 </nav>
+			 <div class="cinta"></div>
 			</header>
 			<?php
 				
 			?>
-	<div class="logo">
-		<img src="img/índice.jpg" />
-	</div>
+			<div class="contenedor-form">
 	<div class="registroexitoso">
 		<?php
 			include("conexionbdd.php");
@@ -64,20 +62,25 @@
 					}
 		?>
 	
-	<h3>TIENES 12 HORAS PARA SOLICITAR EL LIBRO EN LA BIBLIOTECA, DE LO CONTRARIO SE CANCELARA LA RESERVA</h3>
-	<h3>Tienes 3 dias hábiles para la devolucion del libro, de lo contrario se cobraran $5 por dia transcurrido.</h3>
+	<h3>TIENES 12 HORAS PARA SOLICITAR EL LIBRO EN LA BIBLIOTECA,</h3>
+	<h3>DE LO CONTRARIO SE CANCELARA LA RESERVA</h3>
+	<h3>Tienes 3 dias hábiles para la devolucion del libro,</h3>
+	<h3>de lo contrario se cobraran $5 por dia transcurrido.</h3>
 	<br />
-	<h3>Boton para regresar al menu principal.</h3>
+	<h3>Menu principal.</h3>
 	</div>
 	<div class="logo">
-		<a href="MenuUsuario.php"><img src="img/boton-regresar.png" width="246" height="80" /></a>
+		<a href="MenuUsuario.php"><img src="img/casa.png" width="120" height="120" /></a>
 	</div>
 	<br />
 	<div class="registroexitoso">
-    <h3>Boton para consultar otro libro.</h3>
+    <h3>Consultar otro libro.</h3>
+	<br />
 	</div>
 	<div class="logo">
-		<a href="consulta.php"><img src="img/boton_libros.png" width="128" height="128" /></a>
+		<a href="consulta.php"><img src="img/regresar.png" width="120" height="120" /></a>
 	</div>
+	<br />
+    </div>
 </body>
 </html>

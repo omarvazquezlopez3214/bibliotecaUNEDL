@@ -33,22 +33,31 @@
 	if(preg_match("/^([0-9]{2}[A|B][L])[0-9]{7}$/", $matri))
 	{
 		$tipousuario='A'; //Alumno 	
-	}else
+	}else if(preg_match("/^([0-9]){3,5}$/", $matri))
 		{
 			$tipousuario='B'; //Maestro
+		}else if(preg_match("/^([B][I])[0-9]{3}$/", $matri))
+		{
+			$tipousuario = 'C';
 		}
 	if($tipousuario == 'B')
 	{
 		$licenciatura = "Colaborador";
+	}else if ($tipousuario == 'C') {
+		$licenciatura = "Bibliotecario";
 	}
 
 	$sql = "INSERT INTO usuarios(nombre, apellidos, contrasena, correo_electronico, matricula, carrera, telefono , tipo_usuario, fecha_registro) 
 	VALUES ('".$name."','".$apellidos."','".$pass."','".$email."','".$matri."','".$licenciatura."','".$telefono."','".$tipousuario."',now())";
     //Se ejecuta la sentencia de query
-	if($conn->query ($sql) === TRUE)
+	if($conn->query ($sql) === TRUE && $tipousuario == 'C')
+	{
+		header("Location:exitoregbibliotecario.php");
+	}else if($conn->query ($sql) === TRUE)
 	{
 		header("Location:exitoreg.html");
-	}else
+	}
+	else
 	{
 		echo "<br /> Error : ". $sql . "<br />". $conn->error."<br />";
 				}

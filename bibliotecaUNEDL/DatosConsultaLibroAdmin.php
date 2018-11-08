@@ -10,7 +10,6 @@
 	<head>
 	<meta charset="UTF-8">
     <title>Prestamos</title>
-    <link rel="stylesheet" href="css/estilos2.css">
     <link rel="stylesheet" href="css/estilos.css">
 	</head>
 	<body>
@@ -19,8 +18,8 @@
 			  <div class="contenido-menu">
 				<div class="logo">
 					<div class="logo-nombre">
-						<img src="img/unedl.png" alt="" />
-						<a href="MenuAdmin.php" >BIBLIOTECA </a>
+						<img src="img/unedl2.png" alt="" />
+						<a href="MenuAdmin.php" ></a>
 					</div>
 					<div class="icono-menu">
 						<a href="#" id="btn-menu" class="btn-menu"><samp class="fa fa-bars"></samp></a>
@@ -43,6 +42,7 @@
                     <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+			 <div class="cinta"></div>
 			</header>
 		<div class="contenedor-form">
 			<div class="toggle2">
@@ -51,7 +51,7 @@
 			<h1>Datos del libro y Usuario</h1>
 			<p>CodigoDewey*Titulo-Autor-Editorial-Plantel-Año-Estatus</p>
 			<br />
-			 <form action="aceptarReservaLibro.php" method="post">
+			 <form action="aceptarReservaLibroAdmin.php" method="post">
 			 	<select id="librosConsulta" name="consultaLibros" class="contenedor-form">
 			 		<?php
 				echo '<option value="0">Seleccione un libro de la consulta:</option>';

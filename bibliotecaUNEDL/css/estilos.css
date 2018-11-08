@@ -7,17 +7,20 @@
 }
 
 body {
-	font-family: sans-serif;
+    background: url(../img/biblio.jpg);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 header{
 	width: 100%;
-    background: linear-gradient(to right, #000, #000 );
-    opacity: 0.9;
+    background: rgb(255, 255, 255);
 }
+
 /*logo y texto */
 .menu {
 	width: 100%;
+	height: 100px;
 	max-width: 1300px;
 	margin: auto;
 	padding: .5em 0;  
@@ -27,7 +30,7 @@ header{
 
 .contenido-menu .logo .logo-nombre img {
 	width: 250px;
-	margin-top: 0.5px;
+	margin-top: 15px;
 }
 
 .menu .contenido-menu .logo .btn-menu {
@@ -37,28 +40,18 @@ header{
 	font-size: 30px;
 }
 
-.menu .contenido-menu .logo .logo-nombre a {
-	text-decoration: none;
-	color: #F1C40F;
-	font-size: 42px;
-	margin-left: 8px;
-	margin-top: 17.5px;
-	float: right;
-	font-weight: normal;	
-}
 /*menu de navegacion*/
 
 .menu > .menu-navegacion{
-	width: 500px;
-	height: 50px;
+	width: 600px;
+	height: 35px;
 	/*background: red;*/
 	margin-top: 15px;
-	margin-left: 90px;
+	margin-left: 450px;
 }
 
-.menu-navegacion ul {
-	list-style: none;
-	
+.menu > .menu-navegacion > ul {
+	float: right;
 }
 
 .menu-navegacion > li{
@@ -68,13 +61,13 @@ header{
 .menu-navegacion > li > a {
 	display: block;
 	padding: 5px 10px;
-	color: #FFFFFF;
-	font-family: "Century Gothic";
-	font-size: 13px;
+	color: #000;
+	font-family: "Calibri";
+	font-size: 18px;
 	text-decoration: none;	
 }
 .menu-navegacion li a:hover{
-	color: #F1C40F;
+	color: rgb(25,92,130);
 	transition: all .03s;
 }
 
@@ -84,6 +77,168 @@ header{
 	float: right;
 	margin-left: 8px;
 }
+
+.cinta {
+	width: 100%;
+	height: 20px;
+	background: rgb(26,29,86);
+
+}
+
+.contenedor-form {
+    background: rgba(255,255,255,255);
+    max-width: 500px;
+    width: 100%;
+    margin: 48px auto;
+    border-radius: 5px;
+    color: #000;
+    position: relative;
+    /*padding: 40px;*/
+}
+
+.contenedor-form .toggle {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 100px;
+    height: 30px;
+    font-size: 11px;
+    line-height: 25px;
+    text-align: center;
+    border-top: 2px solid rgb(26,29,86);
+    border-bottom: 2px solid rgb(26,29,86);
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.contenedor-form .toggle:hover {
+    border-top: 2px solid rgb(25,92,130);
+    border-bottom: 2px solid rgb(25,92,130);
+}
+.contenedor-form .toggle2:hover {
+    border-top: 2px;
+    border-bottom: 2px;
+}
+
+.contenedor-form .toggle span {
+    letter-spacing: 1px;
+}
+
+.contenedor-form .toggle .formulario p, h1{
+	font-family: Calibri;
+}
+.contenedor-form .toggle .formulario h1, p{
+	font-family: Calibri;
+}
+
+.contenedor-form .toggle2 .formulario p, h1{
+	font-family: Calibri;
+}
+.contenedor-form .toggle2 .formulario h1, p{
+	font-family: Calibri;
+}
+
+.contenedor-form h2 {
+    margin: 0 0 28px 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+}
+.contenedor-form input[type="text"],
+.contenedor-form input[type="password"],
+.contenedor-form input[type="email"],
+.contenedor-form input[type="number"],
+.contenedor-form input[type="datetime"],
+.contenedor-form input[type="button"],
+.contenedor-form input[type="tel"]{
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 0 0 20px 0;
+    background: rgba(255,255,255,255);
+    color: #000000;
+    border: none;
+    border-radius: 2px;
+    border-bottom: 4px solid rgb(25,92,130);
+    box-sizing: border-box;
+    font-family: "Calibri";
+    font-size: 14px;
+    font-weight:normal;
+    transition: all .5s ease;
+}
+
+.contenedor-form input[type="text"]:focus,
+.contenedor-form input[type="password"]:focus,
+.contenedor-form input[type="email"]:focus,
+.contenedor-form input[type="number"]:focus,
+.contenedor-form input[type="datetime"]:focus,
+.contenedor-form input[type="button"]:focus,
+.contenedor-form input[type="tel"] {
+    border-bottom: 4px solid #1a1d56;
+}
+
+.contenedor-form input[type="submit"],
+.contenedor-form input[type="button"] {
+    background: rgb(25, 92, 130);
+    color: #FFF;
+    width: 100%;
+    border: none;
+    padding: 10px 0;
+    font-size: 11px;
+    font-weight: normal;
+    font-family: Calibri;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+
+.contenedor-form input[type="submit"]:hover,
+.contenedor-form input[type="button"]:hover {
+    background: #1C2652;
+}
+
+.contenedor-form .reset-password {
+    background: rgb(26,29,86);
+    color: white;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+}
+
+.contenedor-form .reset-password a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.contenedor-form .formulario {
+    display: none;
+    padding: 40px;
+}
+
+.contenedor-form .formulario:nth-child(2) {
+    display: block;
+}
+.contenedor-form .formulario2 {
+    display: none;
+    padding: 40px;
+}
+
+
+.logo{
+	text-align: center;
+}
+.registroexitoso p, h3{
+	font-family: Calibri;
+	text-align: center;
+	color:#000;
+}
+
 
 
 /*Submenu de libro*/
@@ -99,8 +254,14 @@ header{
 	display: block;
 	padding: 15px;
 	color: #FFFFFF;
-	font-family: "Century Gothic";
+	background: rgb(25,92,130);
+	font-size: 15px;
+	font-family: "Calibri";
 	text-decoration: none;
+}
+
+.submenu li a:hover{
+	color: rgb(0,0,0);
 }
 
 .menu-navegacion li:hover .submenu {
@@ -211,9 +372,14 @@ header{
 
 
 /* pie de pagina*/
+.cinta2{
+	width: 100%;
+	height: 15px;
+	background: rgb(25,92,130);
+}
+
 .footer {
-	background: linear-gradient(to right, #000, #1c2652);
-	opacity: .9;
+	background: rgb(26,29,86);
 	padding: 10px;
 	height: 200px;
 }
@@ -225,6 +391,7 @@ header{
 }
 
 .footer .face img {
+	background: url("img/facebook-logo-de-letra.png"); 
 	width: 40px;
 	float: right;
 	position: relative;

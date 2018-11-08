@@ -16,7 +16,6 @@
 		<meta name="description" content="">
 		<meta name="author" content="Omar">
 		<link href="css/estilos.css" rel="stylesheet" type="text/css" />
-		<link href="css/estilos2.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 		<header>
@@ -24,8 +23,8 @@
 			  <div class="contenido-menu">
 				<div class="logo">
 					<div class="logo-nombre">
-						<img src="img/unedl.png" alt="" />
-						<a href="MenuAdmin.php" >BIBLIOTECA </a>
+						<img src="img/unedl2.png" alt="" />
+						<a href="MenuAdmin.php" ></a>
 					</div>
 					<div class="icono-menu">
 						<a href="#" id="btn-menu" class="btn-menu"><samp class="fa fa-bars"></samp></a>
@@ -48,11 +47,14 @@
                     <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+			 <div class="cinta"></div>
 			</header>
 			<div class="contenedor-form">
-			 <div>
+				<div class="toggle2">
+				</div>
+			 <div class="formulario">
 			 <h1>Prestamos</h1>
-			 <h4>Persona y sus libros reservados.</h4>
+			 <p>Persona y sus libros reservados.</p>
 			 <br />
 			 <form action="aceptarReservaPersonas.php" method="post">
 			 	<select id="personaReservaLibro" name="personaLibrosEnReserva" class="contenedor-form" required>

@@ -15,7 +15,6 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<link rel="stylesheet" href="css/fontawesome-all.min.css" />
 	    <link rel="stylesheet" href="css/estilos.css" />
-	    <link rel="stylesheet" href="css/estilos2.css" />
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	    <link rel="stylesheet" href="/fonts.css" />
 	</head>
@@ -26,8 +25,7 @@
 			  <div class="contenido-menu">
 				<div class="logo">
 					<div class="logo-nombre">
-						<img src="img/unedl.png" alt="" />
-						<a href="#" >BIBLIOTECA </a>
+						<img src="img/unedl2.png" alt="" />
 					</div>
 					<div class="icono-menu">
 						<a href="#" id="btn-menu" class="btn-menu"><samp class="fa fa-bars"></samp></a>
@@ -43,6 +41,7 @@
                     <li><a href="logout.php">Cerrar sesion</a></li>
 				</ul>
 			 </nav>
+			 <div class="cinta"></div>
 			</header>
 			<div class="main">
 				<br /><br /><br />
@@ -71,6 +70,7 @@
 		});
 	</script>
 			<br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<div class="cinta2"></div>
 			<div class="footer">
 				<p class="texto-footer">
 					<br />
@@ -79,10 +79,9 @@
                     Teléfono: 01 33 3825 7580
 				</p>
 				<div class="face">
-					<a title="Pagina inicio UNEDL" href="http://unedl.edu.mx/portal/index.php"><img src="img/logo_unedl.png" /></a>
-					<a href="https://www.facebook.com/unedl.universidad"><img src="img/facebook.png" title="Pagina de facebook UNEDL" alt="" /></a>
-					<a href="https://twitter.com/UnedlU?lang=es"><img src="img/t.png" title="Pagina de twitter UNEDL" alt="" /></a>
-					
+					<a title="Pagina inicio UNEDL" href="https://www.unedl.edu.mx/portal/"><img src="img/unedl.png" /></a>
+					<a title="Pagina de facebook" href="https://www.facebook.com/unedl.universidad"><img src="img/facebook.png" /></a>
+                    <a href="https://twitter.com/UnedlU?lang=es"><img src="img/twitter.png" title="Pagina de twitter UNEDL" alt="" /></a>-->
 				</div>
 			</div>
 			

@@ -30,9 +30,12 @@
 			if($_SESSION["tipousuario"] == 'A' || $_SESSION["tipousuario"] == 'B')
 			{
 				header("Location: MenuUsuario.php");
-			}else
+			}else if($_SESSION["tipousuario"] == 'C')
 			{
 				header("Location: MenuAdmin.php");
+			}else
+			{
+				header("Location: MenuSuperUsuario.php");
 			}
 		}
 	}else

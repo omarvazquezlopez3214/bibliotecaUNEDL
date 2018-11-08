@@ -11,7 +11,6 @@
 	<meta charset="UTF-8">
     <title>Consulta de libros</title>
     <link rel="stylesheet" href="css/estilos.css" />
-	<link rel="stylesheet" href="css/estilos2.css" />
 	</head>
 		<body>
 			<header>
@@ -19,8 +18,7 @@
 			  <div class="contenido-menu">
 				<div class="logo">
 					<div class="logo-nombre">
-						<img src="img/unedl.png" alt="" />
-						<a href="MenuUsuario.php" >BIBLIOTECA </a>
+						<img src="img/unedl2.png" alt="" />
 					</div>
 					<div class="icono-menu">
 						<a href="#" id="btn-menu" class="btn-menu"><samp class="fa fa-bars"></samp></a>
@@ -37,6 +35,7 @@
                     <li><a href="logout.php">Cerrar sesion</a></li>
 				</ul>
 			 </nav>
+			 <div class="cinta"></div>
 			</header>
 		<div class="contenedor-form">
 			<div class="toggle2">
@@ -45,7 +44,7 @@
 			 <div class="formulario">
 			 <h1>Consulta de libros</h1>
 			 <br />
-			 <h2>Escribe en el campo conforme a la modalidad de búsqueda.</h2>
+			 <p>Escribe en el campo conforme a la modalidad de búsqueda.</p>
 			 <form action="DatosConsultaLibro.php">
 			 	
 			 	<select class="contenedor-form" name="modalidadBusqueda" required title="Modalidad de busqueda"> 

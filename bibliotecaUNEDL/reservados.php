@@ -10,7 +10,6 @@
 	<head>
 	<meta charset="UTF-8">
     <title>Personas con libros reservados</title>
-    <link rel="stylesheet" href="css/estilos2.css">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -22,8 +21,8 @@
 			  <div class="contenido-menu">
 				<div class="logo">
 					<div class="logo-nombre">
-						<img src="img/unedl.png" alt="" />
-						<a href="MenuAdmin.php" >BIBLIOTECA </a>
+						<img src="img/unedl2.png" alt="" />
+						<a href="MenuAdmin.php" ></a>
 					</div>
 					<div class="icono-menu">
 						<a href="#" id="btn-menu" class="btn-menu"><samp class="fa fa-bars"></samp></a>
@@ -45,6 +44,7 @@
                     <li><a href="logout.php">Cerrar sesion</a></li>
 				</ul>
 			 </nav>
+			 <div class="cinta"></div>
 			</header>
 			<br /><br />
 			<div class="contenedor-form">
@@ -54,7 +54,7 @@
         	<div class="formulario">
 			<br />
 			<h1>Reservaciones de libros</h1>
-			<h4>Si quieres obtener todas las reservas de libros, solo presiona el boton de "Buscar todos".</h4>
+			<p>Si quieres obtener todas las reservas de libros, solo presiona el boton de "Buscar todos".</p>
 			<br />
 			 <form action="DatosPersonasReservadas.php" method="get">
                 <input id="usuario" type="text" name="matricula" placeholder="Escriba la matricula del alumno *" required>
@@ -67,7 +67,7 @@
             <div class="formulario">
 			<br />
 			<h1>Reservaciones de libros</h1>
-			<h4>Si quieres obtener todas las reservas de libros, solo presiona el boton de "Buscar todos".</h4>
+			<p>Si quieres obtener todas las reservas de libros, solo presiona el boton de "Buscar todos".</p>
 			<br />
 			 <form action="DatosPersonasReservadasTodos.php" method="get">
 

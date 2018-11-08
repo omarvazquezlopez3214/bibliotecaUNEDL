@@ -16,7 +16,6 @@
 		<meta name="description" content="">
 		<meta name="author" content="Omar">
 		<link href="css/estilos.css" rel="stylesheet" type="text/css" />
-		<link href="css/estilos2.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 		<header>
@@ -24,8 +23,8 @@
 			  <div class="contenido-menu">
 				<div class="logo">
 					<div class="logo-nombre">
-						<img src="img/unedl.png" alt="" />
-						<a href="MenuAdmin.php" >BIBLIOTECA </a>
+						<img src="img/unedl2.png" alt="" />
+						<a href="MenuAdmin.php" ></a>
 					</div>
 					<div class="icono-menu">
 						<a href="#" id="btn-menu" class="btn-menu"><samp class="fa fa-bars"></samp></a>
@@ -48,54 +47,55 @@
                     <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+			 <div class="cinta"></div>
 			</header>
 			<div class="contenedor-form">
-			 <div>
-			 <h1>Devoluciones</h1>
-			 <h4>Persona y sus libros prestados.</h4>
-			 <br />
-			 <form action="aceptarPrestamoPersonas.php" method="post">
-			 	<select id="personaReservaLibro" name="personaLibrosEnPrestamo" class="contenedor-form" required>
-			 		<?php
-			 		echo '<option value="">Seleccione un libro prestado del usuario:</option>';
-			 		include("conexionbdd.php");
-					if($conn->connect_error)
-					{
-						die("<br /> Fallo el intento de conexión a la base de datos: "
+				<div class="contenedor-form">
+					<div class="toggle2">
+					</div>
+        	    		<div class="formulario">
+			 				<h1>Devoluciones</h1>
+			 				<p>Persona y sus libros prestados.</p>
+			 				<br />
+			                <form action="aceptarPrestamoPersonas.php" method="post">
+			 	            <select id="personaReservaLibro" name="personaLibrosEnPrestamo" class="contenedor-form" required>
+			 		        <?php
+			 		          echo '<option value="">Seleccione un libro prestado del usuario:</option>';
+			 		          include("conexionbdd.php");
+					          if($conn->connect_error)
+					          {
+						      die("<br /> Fallo el intento de conexión a la base de datos: "
 					 								.$conn->connect_error . "<br />");
-					}
+					          }
 					//Recuperar las variables
-					$matricula=$_GET['matricula'];
-					$validarmatricula = "SELECT * FROM prestamoslibros";
-					if($resultado = $conn->query($validarmatricula))
-					{
-						while($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC))
-						{
-						echo '<option value ="'.$row[id_libro].'">'.$row[titulo].' - '.$row[autor].' - '.$row[plantel].' - '.$row[ano].' - '.$row[nombre].' - '.$row[apellidos].' - '.$row[correo_electronico].' - '.$row[matricula].' - '.$row[carrera].' - '.$row[telefono].' - '.$row[fecha_prestamo].'</option>';
-						}	
-					}else
-					{
-						header("Location: noexitoPersonasPrestamo.php");
-					}
-
-					mysqli_close($conn);
-					
-			 		?>
-			 	</select>
-			 	<select id="personaReservaLibro" name="personaEstatusEnPrestamo" class="contenedor-form" required>
-			 	<option value="">Selecciona el estatus para la devolucion del libro *</option>
-			 	<option value="DISPONIBLE">Disponible</option>
-			 	<option value="CONSULTA INTERNA">Consulta Interna</option>
-			 	<option value="RESERVADO">Reservado</option>
-			 	<option value="PRESTAMO">Prestamo</option>
-			 	</select>
-                
-                <input type="submit" value="Aceptar "> <br /> <br />
-                
-                <input type="button" value="Cancelar" onclick="location.href='prestamos.php'">
-				</form>
-            </div>
-		</div>
+					          $matricula=$_GET['matricula'];
+					          $validarmatricula = "SELECT * FROM prestamoslibros";
+					          if($resultado = $conn->query($validarmatricula))
+					          {
+							  while($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC))
+							  {
+							  echo '<option value ="'.$row[id_libro].'">'.$row[titulo].' - '.$row[autor].' - '.$row[plantel].' - '.$row[ano].' - '.$row[nombre].' - '.$row[apellidos].' - '.$row[correo_electronico].' - '.$row[matricula].' - '.$row[carrera].' - '.$row[telefono].' - '.$row[fecha_prestamo].'</option>';
+							  }	
+							  }else
+							  {
+							  header("Location: noexitoPersonasPrestamo.php");
+					 		  }
+							  mysqli_close($conn);
+							?>
+			 	        	</select>
+			 				<select id="personaReservaLibro" name="personaEstatusEnPrestamo" class="contenedor-form" required>
+			 				<option value="">Selecciona el estatus para la devolucion del libro *</option>
+			 				<option value="DISPONIBLE">Disponible</option>
+			 				<option value="CONSULTA INTERNA">Consulta Interna</option>
+			 				<option value="RESERVADO">Reservado</option>
+			 				<option value="PRESTAMO">Prestamo</option>
+			 				</select>
+			 				<input type="submit" value="Aceptar "> <br /> <br />
+                			<input type="button" value="Cancelar" onclick="location.href='prestamos.php'">
+							</form>
+						</div>
+            	</div>
+			</div>
     <script src="js/jquery-3.1.1.min.js"></script>    
     <script src="js/main.js"></script>
 	</body>

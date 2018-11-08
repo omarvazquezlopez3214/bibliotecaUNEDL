@@ -10,7 +10,6 @@
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset= UTF-8" />
     <title>Prestamos</title>
-    <link rel="stylesheet" href="css/estilos2.css">
     <link rel="stylesheet" href="css/estilos.css">
 	</head>
 	<body>
@@ -19,8 +18,8 @@
 			  <div class="contenido-menu">
 				<div class="logo">
 					<div class="logo-nombre">
-						<img src="img/unedl.png" alt="" />
-						<a href="MenuUsuario.php" >BIBLIOTECA </a>
+						<img src="img/unedl2.png" alt="" />
+						<a href="MenuUsuario.php" ></a>
 					</div>
 					<div class="icono-menu">
 						<a href="#" id="btn-menu" class="btn-menu"><samp class="fa fa-bars"></samp></a>
@@ -36,6 +35,7 @@
                     <li><a href="logout.php">Cerrar sesion</a></li>
 				</ul>
 			 </nav>
+			 <div class="cinta"></div>
 			</header>
 			
 		<div class="contenedor-form">
@@ -45,7 +45,7 @@
 			
 			<h1>Datos del libro</h1>
 			<br />
-			<p>*TITULO-AUTOR-PLANTEL-AÑO-ESTATUS</p>
+			<p>TITULO-AUTOR-PLANTEL-AÑO-ESTATUS</p>
 			 <form action="aceptarReservaLibro.php" method="post">
 			 	<select id="librosConsulta" name="consultaLibros" class="contenedor-form" required>
 			 		<option value="">Seleccione un libro de la consulta:</option>
@@ -83,7 +83,7 @@
 					{
 						while($row = mysqli_fetch_array($result))
 						{
-							echo '<option value ="'.$row[id].'"> * '.$row[titulo].' - '.$row[autor_autores].' - '.$row[editorial].' - '.$row[plantel].' - '.$row[ano].' - '.$row[estatus].'</option>';
+							echo '<option value ="'.$row[id].'">'.$row[codigo_dewey].' * '.$row[titulo].' - '.$row[autor_autores].' - '.$row[editorial].' - '.$row[plantel].' - '.$row[ano].' - '.$row[estatus].'</option>';
 						}
 					}else
 					{

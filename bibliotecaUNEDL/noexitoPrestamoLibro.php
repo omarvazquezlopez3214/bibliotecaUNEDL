@@ -11,7 +11,6 @@
     <meta charset="UTF-8">
     <title>No exito devolucion libro</title>
     <link rel="stylesheet" href="css/estilos.css" />
-	    <link rel="stylesheet" href="css/estilos2.css" />
 </head>
 <body>
 	<header>
@@ -19,8 +18,8 @@
 			  <div class="contenido-menu">
 				<div class="logo">
 					<div class="logo-nombre">
-						<img src="img/unedl.png" alt="" />
-						<a href="MenuAdmin.php" >BIBLIOTECA </a>
+						<img src="img/unedl2.png" alt="" />
+						<a href="MenuAdmin.php" ></a>
 					</div>
 					<div class="icono-menu">
 						<a href="#" id="btn-menu" class="btn-menu"><samp class="fa fa-bars"></samp></a>
@@ -43,24 +42,28 @@
                     <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+			 <div class="cinta"></div>
 			</header>
-	<div class="logo">
-		<img src="img/índice.jpg" />
-	</div>
+	<div class="contenedor-form">
 	<div class="registroexitoso">
+	<br />
 	<h3>EL LIBRO NO SE PUEDE PRESTAR POR QUE SE ENCUENTRA DISPONIBLE</h3>
 	<br />
-	<h3>Boton para regresar al menu principal.</h3>
+	<h3>Menu principal.</h3>
 	</div>
+	<br />
 	<div class="logo">
-		<a href="MenuAdmin.php"><img src="img/boton-regresar.png" width="246" height="80" /></a>
+		<a href="MenuAdmin.php"><img src="img/casa.png" width="120" height="120" /></a>
 	</div>
 	<br />
 	<div class="registroexitoso">
-    <h3>Boton para consultar otra persona.</h3>
+    <h3>Consultar otra persona.</h3>
 	</div>
+	<br />
 	<div class="logo">
-		<a href="reservados.php"><img src="img/boton_libros.png" width="128" height="128" /></a>
+		<a href="reservados.php"><img src="img/regresar.png" width="120" height="120" /></a>
+	</div>
+	<br />
 	</div>
 </body>
 </html>

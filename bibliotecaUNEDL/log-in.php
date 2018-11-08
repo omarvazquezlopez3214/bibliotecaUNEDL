@@ -6,33 +6,34 @@
     <meta http-equiv="Expires" content="0" >
     <title>Login Biblioteca UNEDL</title>
     <link rel="stylesheet" href="css/estilos.css" />
-	    <link rel="stylesheet" href="css/estilos2.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<header>
-		<nav class="menu">
-			  <div class="contenido-menu">
-				<div class="logo">
-					<div class="logo-nombre">
-						<img src="img/unedl.png" alt="" />
-						<a href="MenuPrincipal.html" >BIBLIOTECA </a>
-					</div>
-					<div class="icono-menu">
-						<a href="#" id="btn-menu" class="btn-menu"><samp class="fa fa-bars"></samp></a>
-					</div>
-				</div>
-			  </div>
-			
-				<ul class="menu-navegacion">
+                <nav class="menu">
+              <div class="contenido-menu">
+                <div class="logo">
+                    <div class="logo-nombre">
+                        <img src="img/unedl2.png" alt="" />
+                    </div>
+                    <div class="icono-menu">
+                        <a href="#" id="btn-menu" class="btn-menu"><samp class="fa fa-bars"></samp></a>
+                    </div>
+                </div>
+              </div>
+            
+                <ul class="menu-navegacion">
                     <li><a href="http://unedl.edu.mx/portal/contacto.php?">Contacto</a></li>
                     <li><a href="MenuPrincipal.html">Inicio</a></li>
                     <li><a href="log-in.php">Iniciar sesion o registrate</a></li>
-				</ul>
-			 </nav>
-			</header>
+                </ul>
+             </nav>
+             <div class="cinta">
+                
+            </div>
+            </header>
     <div class="contenedor-form">
         <div class="toggle">
             <span> Crear Cuenta</span>
@@ -63,10 +64,7 @@
                 
                 <input type="password" name="contrasena" placeholder="Contraseña *" 
                 maxlength="50" required pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" 
-                title="Una contraseña válida es un conjunto de caracteres, donde cada uno consiste de
-                una letra mayúscula o minúscula, o un dígito. La contraseña debe empezar con una letra y
-                contener al menos un dígito.
-                sin carácteres extraños [$%-%^@] y sin espacios">
+                title="La contraseña debe comenzar con una letra mayuscula o minuscula y contener al menos un dígito, sin carácteres extraños [$%-%^@] y sin espacios con un minimo de 8 caracteres y un maximo de 15">
                 
                 <input type="email" name="correo" placeholder="Correo Electronico *" 
                 maxlength="50" required>
