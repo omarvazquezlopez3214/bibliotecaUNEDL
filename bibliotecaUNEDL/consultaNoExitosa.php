@@ -1,9 +1,17 @@
 <?php
 	@session_start();
-	if(!isset($_SESSION["matricula"])) 
-	{
-		header("Location: log-in.php");
-	}
+    if(!isset($_SESSION["matricula"])) 
+    {
+        header("Location: log-in.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'C') 
+    {
+        header("Location: MenuAdmin.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'D') 
+    {
+        header("Location: MenuSuperUsuario.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

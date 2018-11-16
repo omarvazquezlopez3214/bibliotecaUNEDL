@@ -1,15 +1,27 @@
 <?php
 	@session_start();
-	if(!isset($_SESSION["matricula"])) 
-	{
-		header("Location: log-in.php");
-	}
+    if(!isset($_SESSION["matricula"])) 
+    {
+        header("Location: log-in.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'A') 
+    {
+        header("Location: MenuUsuario.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'B') 
+    {
+        header("Location: MenuUsuario.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'C') 
+    {
+        header("Location: MenuAdmin.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 	<meta charset="UTF-8">
-    <title>Prestamos</title>
+    <title>Libros</title>
     <link rel="stylesheet" href="css/estilos.css">
 	</head>
 	<body>
@@ -28,10 +40,12 @@
 			  </div>
 			
 				<ul class="menu-navegacion">
+					<li><a href="MenuSuperUsuario.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
                     	<ul class="submenu">
                     		<li><a href="altalibrosuper.php">Dar de alta</a></li>
                     		<li><a href="bajalibrosuper.php">Dar de baja</a></li>
+                    		<li><a href="eliminados.php">Eliminados</a></li>
                     	</ul>
                     </li>
                     <li><a href="#">Bibliotecarios</a>
@@ -55,7 +69,7 @@
         	</div>
         	<div class="formulario">
 			<h1>Datos del libro y Usuario</h1>
-			<p>CodigoDewey*Titulo-Autor-Editorial-Plantel-Año-Estatus</p>
+			<p>Id*CodigoDewey*Titulo-Autor-Editorial-Plantel-Año-Estatus</p>
 			<br />
 			 <form action="aceptarReservaLibroSuper.php" method="post">
 			 	<select id="librosConsulta" name="consultaLibros" class="contenedor-form">
@@ -79,7 +93,7 @@
 					{
 						while($row = mysqli_fetch_array($result))
 						{
-							echo '<option value ="'.$row[id].'">'.$row[codigo_dewey].' * '.$row[titulo].' - '.$row[autor_autores].' - '.$row[editorial].' - '.$row[plantel].' - '.$row[ano].' - '.$row[estatus].'</option>';
+							echo '<option value ="'.$row[id].'">'.$row[id].'*'.$row[codigo_dewey].' * '.$row[titulo].' - '.$row[autor_autores].' - '.$row[editorial].' - '.$row[plantel].' - '.$row[ano].' - '.$row[estatus].'</option>';
 							
 						}	
 					}else
@@ -95,7 +109,7 @@
 					{
 						while($row = mysqli_fetch_array($result))
 						{
-							echo '<option value ="'.$row[id].'">'.$row[codigo_dewey].' * '.$row[titulo].' - '.$row[autor_autores].' - '.$row[editorial].' - '.$row[plantel].' - '.$row[ano].' - '.$row[estatus].'</option>';
+							echo '<option value ="'.$row[id].'">'.$row[id].'*'.$row[codigo_dewey].' * '.$row[titulo].' - '.$row[autor_autores].' - '.$row[editorial].' - '.$row[plantel].' - '.$row[ano].' - '.$row[estatus].'</option>';
 						}
 					}else
 					{
@@ -109,7 +123,7 @@
 					{
 						while($row = mysqli_fetch_array($result))
 						{
-							echo '<option value ="'.$row[id].'">'.$row[codigo_dewey].' * '.$row[titulo].' - '.$row[autor_autores].' - '.$row[editorial].' - '.$row[plantel].' - '.$row[ano].' - '.$row[estatus].'</option>';
+							echo '<option value ="'.$row[id].'">'.$row[id].'*'.$row[codigo_dewey].' * '.$row[titulo].' - '.$row[autor_autores].' - '.$row[editorial].' - '.$row[plantel].' - '.$row[ano].' - '.$row[estatus].'</option>';
 						}	
 					}else
 					{
@@ -120,7 +134,7 @@
 			?>
 			 	</select>
 			 	
-                <input type="button" value="Regresar " onclick="location.href = 'ConsultaSuper.php'">
+                <input type="submit" value="Reservar "> <br /> <br />
                 
                 <input type="button" value="Cancelar" onclick="location.href='ConsultaSuper.php'">
               </form>

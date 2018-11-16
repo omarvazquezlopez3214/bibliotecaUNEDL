@@ -1,21 +1,25 @@
 <?php
-	@session_start();
-	if(!isset($_SESSION["matricula"])) 
-	{
-	header("Location: log-in.php");	
-	}else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'C') 
+    @session_start();
+	  if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'A') 
 	    {
-	        header("Location: MenuAdmin.php");
+	        header("Location: MenuUsuario.php");
+	    }
+	  else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'B') 
+	    {
+	        header("Location: MenuUsuario.php");
 	    }
 	  else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'D') 
 	    {
 	        header("Location: MenuSuperUsuario.php");
+	    }else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'C') 
+	    {
+	        header("Location: MenuAdmin.php");
 	    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Menu Usuario</title>
+		<title>Menu Principal</title>
 		<link href="css/estilos.css" rel="stylesheet" type="text/css" />
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,
 	    maximun-scale1.0, minimum-scale=1.0" />
@@ -42,21 +46,20 @@
 			
 				<ul class="menu-navegacion">
                     <li><a href="http://unedl.edu.mx/portal/contacto.php?">Contacto</a></li>
-                    <li><a href="consulta.php">Consultar libro</a></li>
-                    <li><a href="MenuUsuario.php">Inicio</a></li>
-                    <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
-                    <li><a href="logout.php">Cerrar sesion</a></li>
+                    <li><a href="MenuPrincipal.html">Inicio</a></li>
+                    <li><a href="log-in.php">Iniciar sesion o registrate</a></li>
 				</ul>
 			 </nav>
 			 <div class="cinta"></div>
 			</header>
+			
+			
 			<div class="main">
-				<br /><br /><br />
 		<div class="slides">
-		<img src="img/estudiante.jpg" alt="" />
-		<img src="img/example1.jpg" alt="" />
-		<img src="img/example2.jpg" alt="" />
-		<img src="img/example4.jpg" alt="" />
+		<img src="img/maestrias-02.jpg" alt="" />
+		<img src="img/siaru-unedl.jpg" alt="" />
+		<img src="img/santander-unedl.jpg" alt="" />
+		<img src="img/generaciones.jpg" alt="" />
 		</div>
 	</div>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -72,10 +75,12 @@
 					swap: true,
 					pauseOnHover: false,
 					restartDelay: 2500
+					
 				}
 				});
 		});
 	</script>
+	        <br />
 			<br /><br /><br /><br /><br /><br /><br /><br /><br />
 			<div class="cinta2"></div>
 			<div class="footer">
@@ -85,10 +90,13 @@
 					Guadalajara, Jal.<br />
                     Teléfono: 01 33 3825 7580
 				</p>
+				
 				<div class="face">
 					<a title="Pagina inicio UNEDL" href="https://www.unedl.edu.mx/portal/"><img src="img/unedl.png" /></a>
 					<a title="Pagina de facebook" href="https://www.facebook.com/unedl.universidad"><img src="img/facebook.png" /></a>
-                    <a href="https://twitter.com/UnedlU?lang=es"><img src="img/twitter.png" title="Pagina de twitter UNEDL" alt="" /></a>-->
+                    <a href="https://twitter.com/UnedlU?lang=es"><img src="img/twitter.png" title="Pagina de twitter UNEDL" alt="" /></a>
+					
+					
 				</div>
 			</div>
 			

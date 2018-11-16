@@ -1,9 +1,21 @@
 <?php
 	@session_start();
-	if(!isset($_SESSION["matricula"])) 
-	{
-		header("Location: log-in.php");
-	}
+    if(!isset($_SESSION["matricula"])) 
+    {
+        header("Location: log-in.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'A') 
+    {
+        header("Location: MenuUsuario.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'B') 
+    {
+        header("Location: MenuUsuario.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'C') 
+    {
+        header("Location: MenuAdmin.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,10 +41,12 @@
 			  </div>
 			
 				<ul class="menu-navegacion">
+                    <li><a href="MenuSuperUsuario.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
                     	<ul class="submenu">
                     		<li><a href="altalibrosuper.php">Dar de alta</a></li>
                     		<li><a href="bajalibrosuper.php">Dar de baja</a></li>
+                            <li><a href="eliminados.php">Eliminados</a></li>
                     	</ul>
                     </li>
                     <li><a href="#">Bibliotecarios</a>
@@ -64,7 +78,7 @@
 			 	
 			 	<input type="number" name="Id" placeholder="ID *" required>
 			 	
-                <input type="text" name="Dewey" placeholder="Código Dewey *" maxlength="7" required>
+                <input type="text" name="Dewey" placeholder="Dewey (Ej. 330 DES) *" maxlength="7" required>
                 
                 <input type="text" name="Titulo" placeholder="Título del libro *" maxlength="150" required>
                 

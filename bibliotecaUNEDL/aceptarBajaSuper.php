@@ -1,4 +1,7 @@
 <?php
+@session_start();
+?>
+<?php
     include("conexionbdd.php");
 	if($conn->connect_error)
 	{
@@ -8,16 +11,24 @@
 	//Recuperar las variables
 	$id=$_POST['Id'];
 	
-	$validarid = "SELECT id FROM libros WHERE id = '".$id."' ";
+	$validarid = "SELECT * FROM libros WHERE id = '".$id."' ";
 	$resultado = $conn->query($validarid);
-	$row = mysqli_num_rows($resultado);
-	if( $row == 1)
+
+	if($row = mysqli_fetch_array($resultado,MYSQLI_ASSOC))
 	{
-	$sql = "DELETE FROM libros WHERE id = '".$id."' ";
+	$sql = "INSERT INTO eliminados(Id_libro,codigo_dewey, titulo, autor, plantel, matricula, nombre, fecha_eliminacion)
+    	VALUES ('".$row['id']."','".$row['codigo_dewey']."','".$row['titulo']."','".$row['autor_autores']."','".$row['plantel']."','".$_SESSION["matricula"]."','".$_SESSION["nombre"]."',now())";
     //Se ejecuta la sentencia de query
 	if($conn->query ($sql) === TRUE)
 	{
-		header("Location:exitoBajaSuper.php");
+		$sql2 = "DELETE FROM libros WHERE id = '".$id."' ";
+		if($conn->query($sql2) == TRUE)
+		{
+			header("Location:exitoBajaSuper.php");
+		}else
+		{
+			header("Location: noexitoAceptarBajaSuper.php");
+		}
 	}else
 	{
 		echo "<br /> Error : ". $sql . "<br />". $conn->error."<br />";
@@ -25,7 +36,7 @@
 	}else
 	{
 		
-		header("Location: noexitoAceptarBajaSuper.php");
+		echo "<br /> Error : ". $row . "<br />". $conn->error."<br />";
 	}
 	mysqli_close($conn);
 	

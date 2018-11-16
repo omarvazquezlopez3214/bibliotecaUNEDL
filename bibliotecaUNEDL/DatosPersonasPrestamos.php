@@ -1,9 +1,21 @@
 <?php
 	@session_start();
-	if(!isset($_SESSION["matricula"])) 
-	{
-		header("Location: log-in.php");
-	}
+    if(!isset($_SESSION["matricula"])) 
+    {
+        header("Location: log-in.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'A') 
+    {
+        header("Location: MenuUsuario.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'B') 
+    {
+        header("Location: MenuUsuario.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'D') 
+    {
+        header("Location: MenuSuperUsuario.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,6 +45,7 @@
 			  </div>
 			
 				<ul class="menu-navegacion">
+                    <li><a href="MenuAdmin.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
                     	<ul class="submenu">
                     		<li><a href="altalibro.php">Dar de alta</a></li>
@@ -53,7 +66,7 @@
 				<div class="toggle2">
 				</div>
         	    <div class="formulario">
-			 <h1>Devoluciones</h1>
+			 <h1>Prestamos</h1>
 			 <p>Persona y sus libros prestados.</p>
 			 <br />
 			 <form action="aceptarPrestamoPersonas.php" method="post">

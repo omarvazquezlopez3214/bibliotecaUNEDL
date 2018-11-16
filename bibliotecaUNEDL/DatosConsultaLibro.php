@@ -1,15 +1,23 @@
 <?php
 	@session_start();
-	if(!isset($_SESSION["matricula"])) 
-	{
-		header("Location: log-in.php");
-	}
+    if(!isset($_SESSION["matricula"])) 
+    {
+        header("Location: log-in.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'C') 
+    {
+        header("Location: MenuAdmin.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'D') 
+    {
+        header("Location: MenuSuperUsuario.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset= UTF-8" />
-    <title>Prestamos</title>
+    <title>Libros</title>
     <link rel="stylesheet" href="css/estilos.css">
 	</head>
 	<body>

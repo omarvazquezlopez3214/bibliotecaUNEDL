@@ -1,9 +1,21 @@
 <?php
 	@session_start();
-	if(!isset($_SESSION["matricula"])) 
-	{
-		header("Location: log-in.php");
-	}
+    if(!isset($_SESSION["matricula"])) 
+    {
+        header("Location: log-in.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'A') 
+    {
+        header("Location: MenuUsuario.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'B') 
+    {
+        header("Location: MenuUsuario.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'D') 
+    {
+        header("Location: MenuSuperUsuario.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,8 +36,8 @@
 			  <div class="contenido-menu">
 				<div class="logo">
 					<div class="logo-nombre">
-						<img src="img/unedl.png" alt="" />
-						<a href="MenuAdmin.php" >BIBLIOTECA </a>
+						<img src="img/unedl2.png" alt="" />
+						<a href="MenuAdmin.php" ></a>
 					</div>
 					<div class="icono-menu">
 						<a href="#" id="btn-menu" class="btn-menu"><samp class="fa fa-bars"></samp></a>
@@ -34,6 +46,7 @@
 			  </div>
 			
 				<ul class="menu-navegacion">
+                    <li><a href="MenuAdmin.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
                     	<ul class="submenu">
                     		<li><a href="altalibro.php">Dar de alta</a></li>
@@ -48,6 +61,7 @@
                     <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+			 <div class="cinta"></div>
 			</header>
 		<?php
     include("conexionbdd.php");
@@ -70,9 +84,12 @@
 	mysqli_close($conn);
 ?>
 <div class="contenedor-form">
-			 <div>
-			 <h1>Baja de Libros</h1>
-			 <h4>Datos del libro para dar de baja.</h4>
+	<div class="toggle2">
+             <span></span>
+        	 </div>
+	<div class="formulario">
+			 <h1><a style="font-family: Calibri">Baja de Libros</h1>
+			 <h2>Datos del libro para dar de baja.</h2>
 			 <br />
 			 <form action="aceptarBaja.php" method="post">
                 <input type="text" name="Id" value="<?php echo $row['id']; ?>" readonly required>
@@ -91,7 +108,7 @@
                 
                 <input type="button" value="Cancelar" onclick="location.href='bajalibro.php'">
 				</form>
-            </div>
+       </div>
 		</div>
     <script src="js/jquery-3.1.1.min.js"></script>    
     <script src="js/main.js"></script>

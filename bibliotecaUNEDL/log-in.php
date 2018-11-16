@@ -26,7 +26,7 @@
             
                 <ul class="menu-navegacion">
                     <li><a href="http://unedl.edu.mx/portal/contacto.php?">Contacto</a></li>
-                    <li><a href="MenuPrincipal.html">Inicio</a></li>
+                    <li><a href="MenuPrincipal.php">Inicio</a></li>
                     <li><a href="log-in.php">Iniciar sesion o registrate</a></li>
                 </ul>
              </nav>
@@ -57,10 +57,10 @@
             	<br />
             <form id="registro" action="insertarRegistro.php" method="post">
                 <input type="text" name="nombre" placeholder="Nombre *"
-                maxlength="50" required>
+                maxlength="50" pattern="[A-Za-z]" required>
                 
                 <input type="text" name="apellidos" placeholder="Apellidos *" 
-                maxlength="50" required>
+                maxlength="50" pattern="[A-Za-z]" required>
                 
                 <input type="password" name="contrasena" placeholder="Contraseña *" 
                 maxlength="50" required pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" 

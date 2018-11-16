@@ -1,9 +1,20 @@
 <?php
 	@session_start();
-	if(!isset($_SESSION["matricula"])) 
-	{
-		header("Location: log-in.php");
-	}
+    if(!isset($_SESSION["matricula"])) 
+    {
+    header("Location: log-in.php"); 
+    }else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'A') 
+        {
+            header("Location: MenuUsuario.php");
+        }
+      else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'B') 
+        {
+            header("Location: MenuUsuario.php");
+        }
+      else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'C') 
+        {
+            header("Location: MenuAdmin.php");
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,10 +42,12 @@
 			  </div>
 			
 				<ul class="menu-navegacion">
+                    <li><a href="MenuSuperUsuario.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
                     	<ul class="submenu">
                     		<li><a href="altalibrosuper.php">Dar de alta</a></li>
                     		<li><a href="bajalibrosuper.php">Dar de baja</a></li>
+                            <li><a href="eliminados.php">Eliminados</a></li>
                     	</ul>
                     </li>
                     <li><a href="#">Bibliotecarios</a>
@@ -63,12 +76,12 @@
 			<h1>Reservaciones de libros</h1>
 			<p>Si quieres obtener todas las reservas de libros, solo presiona el boton de "Buscar todos".</p>
 			<br />
-			 <form action="DatosPersonasReservadasTodosSuper.php" method="get">
+			 <form action="DatosPersonasReservadasSuper.php" method="get">
                 <input id="usuario" type="text" name="matricula" placeholder="Escriba la matricula del alumno *" required>
 
                 <input type="submit" value="Buscar por persona"> <br /> <br />
                 
-                <input type="submit" value="Cancelar" onclick="location.href = 'MenuAdmin.php'">
+                <input type="submit" value="Cancelar" onclick="location.href = 'MenuSuperUsuario.php'">
               </form>
             </div>
             <div class="formulario">
@@ -76,11 +89,11 @@
 			<h1>Reservaciones de libros</h1>
 			<p>Si quieres obtener todas las reservas de libros, solo presiona el boton de "Buscar todos".</p>
 			<br />
-			 <form action="DatosPersonasReservadasTodos.php" method="get">
+			 <form action="DatosPersonasReservadasTodosSuper.php" method="get">
 
                 <input type="submit" value="Buscar todos"> <br /> <br />
                 
-                <input type="button" value="Cancelar" onclick="location.href = 'MenuAdmin.php'">
+                <input type="button" value="Cancelar" onclick="location.href = 'MenuSuperUsuario.php'">
               </form>
             </div>
           

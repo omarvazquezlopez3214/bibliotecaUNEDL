@@ -4,6 +4,18 @@
     {
         header("Location: log-in.php");
     }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'A') 
+    {
+        header("Location: MenuUsuario.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'B') 
+    {
+        header("Location: MenuUsuario.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'C') 
+    {
+        header("Location: MenuAdmin.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,10 +44,18 @@
               </div>
             
                 <ul class="menu-navegacion">
+                    <li><a href="MenuSuperUsuario.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
                         <ul class="submenu">
                             <li><a href="altalibrosuper.php">Dar de alta</a></li>
                             <li><a href="bajalibrosuper.php">Dar de baja</a></li>
+                            <li><a href="eliminados.php">Eliminados</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Bibliotecarios</a>
+                        <ul class="submenu">
+                            <li><a href="altabibliotecario.php">Dar de alta</a></li>
+                            <li><a href="bajabibliotecario.php">Dar de baja</a></li>
                         </ul>
                     </li>
                     <li><a href="ConsultaSuper.php">Consultar Libro</a></li>
@@ -79,9 +99,10 @@
                 <select id="carre" class="contenedor-form" name="carrera" title="Selecciona una carrera" required> 
                 	<option value="">Selecciona plantel *</option>
                 	<option value="Nutricion">Nutricion</option>
-                	<option value="Administracion de Empresas">Administracion de Empresas</option>
+                	<option value="Centro Universitario">Centro Universitario</option>
                 	<option value="Derecho">Derecho</option>
                 	<option value="Gastronomia">Gastronomia</option>
+                    <option value="Preparatoria">Preparatoria</option>
                 	</select><br /> <br />
                 	<input type="tel" name="telefono" placeholder="Teléfono *"
                 pattern="[0-9]{10}" required>

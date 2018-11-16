@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2018 a las 19:44:00
+-- Tiempo de generación: 16-11-2018 a las 17:57:38
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -46,6 +46,23 @@ CREATE TABLE `devolucionlibros` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `eliminados`
+--
+
+CREATE TABLE `eliminados` (
+  `Id_libro` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `codigo_dewey` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
+  `titulo` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `autor` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `plantel` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `matricula` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `fecha_eliminacion` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `libros`
 --
 
@@ -69,8 +86,8 @@ CREATE TABLE `libros` (
 --
 
 INSERT INTO `libros` (`id`, `codigo_dewey`, `titulo`, `autor_autores`, `editorial`, `lugar_edicion`, `ano`, `plantel`, `tipo_material`, `procedencia`, `comentarios`, `estatus`) VALUES
-(1, '330.SAM', 'ECONOMIA', 'SAMUELSON PAUL', 'MC GRAW HILL', '', '1999', 'CUEDL', 'LIBRO', 'DONACIÓN', '', 'RESERVADO'),
-(2, '330.PAR', 'ECONOMIA', 'PARKIN MICHAEL', 'PEARSON', '', '2004', 'CUEDL', 'LIBRO', 'DONACIÓN', '', 'RESERVADO'),
+(1, '330.SAM', 'ECONOMIA', 'SAMUELSON PAUL', 'MC GRAW HILL', '', '1999', 'CUEDL', 'LIBRO', 'DONACIÓN', '', 'DISPONIBLE'),
+(2, '330.PAR', 'ECONOMIA', 'PARKIN MICHAEL', 'PEARSON', '', '2004', 'CUEDL', 'LIBRO', 'DONACIÓN', '', 'DISPONIBLE'),
 (3, '335.SAM', 'ECONOMIA CON SERIEDAD', 'SAMUELSON PAUL', 'LASSER PRESS', '', '1984', 'CUEDL', 'LIBRO', 'DONACIÓN', '', 'DISPONIBLE'),
 (4, '330.VAZ', 'ECONOMIA', 'VAZQUEZ ORNELAS ADNRES ', 'MC GRAW HILL', '', '2004', 'CUEDL', 'LIBRO', 'DONACIÓN', '', 'DISPONIBLE'),
 (5, '338.VIL', 'DESENVOLVIMIENTO ECONOMICO', 'VILLARD HENRY', 'LIMUSA WILEY', '', '1959', 'CUEDL', 'LIBRO', 'DONACIÓN', '', 'DISPONIBLE'),
@@ -22112,14 +22129,6 @@ CREATE TABLE `reservalibros` (
   `fecha_reservacion` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Volcado de datos para la tabla `reservalibros`
---
-
-INSERT INTO `reservalibros` (`id`, `id_libro`, `titulo`, `autor`, `plantel`, `ano`, `nombre`, `apellidos`, `correo_electronico`, `matricula`, `carrera`, `telefono`, `fecha_reservacion`) VALUES
-(1, '1', 'ECONOMIA', 'SAMUELSON PAUL', 'CUEDL', '1999', 'Omar', 'Vazquez Lopez', 'omar.vazquez.lopez.ing@gmail.com', '15AL4500233', 'Ingenieria de Software', '3312623358', '2018-10-16 12:33:05'),
-(2, '2', 'ECONOMIA', 'PARKIN MICHAEL', 'CUEDL', '2004', 'Omar', 'Vazquez Lopez', 'omar.vazquez.lopez.ing@gmail.com', '15AL4500233', 'Ingenieria de Software', '3312623358', '2018-10-16 12:39:16');
-
 -- --------------------------------------------------------
 
 --
@@ -22145,7 +22154,9 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellidos`, `contrasena`, `correo_electronico`, `matricula`, `carrera`, `telefono`, `tipo_usuario`, `fecha_registro`) VALUES
 (12, 'Administrador', 'administrador', 'admin3214', 'biblioteca.unedl@gmail.com', '123456789', 'UNEDL', '3312623358', 'C', '0000-00-00 00:00:00'),
-(17, 'Omar', 'Vazquez Lopez', 'Omarinho93', 'omar.vazquez.lopez.ing@gmail.com', '15AL4500233', 'Ingenieria de Software', '3312623358', 'A', '2018-09-11 22:24:39');
+(17, 'Omar', 'Vazquez Lopez', 'omar1993', 'omar.vazquez.lopez.ing@gmail.com', '15AL4500233', 'Ingenieria de Software', '3312623358', 'A', '2018-09-11 22:24:39'),
+(18, 'Carlos', 'Carballar', 'Superusuario3214', 'coordinacion.biblioteca@unedl.edu.mx', '526', 'Director Bibliotecario', '3310460702', 'D', '0000-00-00 00:00:00'),
+(19, 'Pedrito', 'Fernandez', 'pedrito123', 'pedrito_0@hotmail.com', '1234', 'Colaborador', '3312623358', 'B', '2018-11-15 09:10:29');
 
 --
 -- Índices para tablas volcadas
@@ -22171,13 +22182,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `reservalibros`
 --
 ALTER TABLE `reservalibros`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
