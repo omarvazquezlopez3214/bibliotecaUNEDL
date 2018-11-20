@@ -52,7 +52,6 @@
         	<div class="formulario">
 			
 			<h1>Datos del libro</h1>
-			<br />
 			<p>TITULO-AUTOR-PLANTEL-AÑO-ESTATUS</p>
 			 <form action="aceptarReservaLibro.php" method="post">
 			 	<select id="librosConsulta" name="consultaLibros" class="contenedor-form" required>

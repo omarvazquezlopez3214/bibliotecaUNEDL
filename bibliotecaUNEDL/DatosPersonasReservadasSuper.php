@@ -75,7 +75,6 @@
 			 <div class="formulario">
 			 <h1>Reservados</h1>
 			 <p>Persona y sus libros reservados.</p>
-			 <br />
 			 <form action="aceptarReservaPersonasSuper.php" method="post">
 			 	<select id="personaReservaLibro" name="personaLibrosEnReserva" class="contenedor-form" required>
 			 		<?php

@@ -76,7 +76,6 @@
         	    		<div class="formulario">
 			 				<h1>Prestamos</h1>
 			 				<p>Persona y sus libros prestados.</p>
-			 				<br />
 			                <form action="aceptarPrestamoPersonasSuper.php" method="post">
 			 	            <select id="personaReservaLibro" name="personaLibrosEnPrestamo" class="contenedor-form" required>
 			 		        <?php

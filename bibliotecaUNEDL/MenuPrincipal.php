@@ -46,7 +46,7 @@
 			
 				<ul class="menu-navegacion">
                     <li><a href="http://unedl.edu.mx/portal/contacto.php?">Contacto</a></li>
-                    <li><a href="MenuPrincipal.html">Inicio</a></li>
+                    <li><a href="MenuPrincipal.php">Inicio</a></li>
                     <li><a href="log-in.php">Iniciar sesion o registrate</a></li>
 				</ul>
 			 </nav>

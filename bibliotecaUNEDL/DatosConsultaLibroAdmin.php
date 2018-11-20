@@ -63,11 +63,10 @@
         	<div class="formulario">
 			<h1>Datos del libro y Usuario</h1>
 			<p>Id*CodigoDewey*Titulo-Autor-Editorial-Plantel-Año-Estatus</p>
-			<br />
 			 <form action="#" method="post">
-			 	<select id="librosConsulta" name="consultaLibros" class="contenedor-form">
+			 	<select id="librosConsulta" name="consultaLibros" class="contenedor-form" required>
 			 		<?php
-				echo '<option value="0">Seleccione un libro de la consulta:</option>';
+				echo '<option value="">Seleccione un libro de la consulta:</option>';
 			    include("conexionbdd.php");
 				if($conn->connect_error)
 				{
