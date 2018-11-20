@@ -23,7 +23,7 @@
 
     <meta charset="UTF-8">
     <meta http-equiv="Expires" content="0" >
-    <title>Login Biblioteca UNEDL</title>
+    <title>Alta bibliotecario UNEDL</title>
     <link rel="stylesheet" href="css/estilos.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -81,10 +81,10 @@
             	<br />
             <form id="registro" action="insertarRegistro.php" method="post">
                 <input type="text" name="nombre" placeholder="Nombre *"
-                maxlength="50" required>
+                maxlength="50" pattern="[A-Za-z]*" required>
                 
                 <input type="text" name="apellidos" placeholder="Apellidos *" 
-                maxlength="50" required>
+                maxlength="50" pattern="^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]{1,24}[\s]*)+$" required>
                 
                 <input type="password" name="contrasena" placeholder="Contraseña *" 
                 maxlength="50" required pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" 
@@ -96,7 +96,16 @@
                 <input type="text" id="matri" name="matricula" placeholder="Matrícula o Numero de colaborador *" 
                 maxlength="50" pattern="*[A-Za-z0-9]" required title="Solo letras y números">
 
-                <select id="carre" class="contenedor-form" name="carrera" title="Selecciona una carrera" required> 
+                <p>Por favor presionar el boton para validar la matrícula.</p>
+            
+                <input class = "bibliotecario" type="button" value="Validar Matrícula" formnovalidate>
+
+                <br />
+                <div id="noexiste" style="display: none">;
+                <h4>No es una matricula valida</h4>;
+                </div>
+
+                <select id="carre" style="display: none" class="contenedor-form" name="carrera" title="Selecciona una carrera" required> 
                 	<option value="">Selecciona plantel *</option>
                 	<option value="Nutricion">Nutricion</option>
                 	<option value="Centro Universitario">Centro Universitario</option>

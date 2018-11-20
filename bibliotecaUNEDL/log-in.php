@@ -57,10 +57,10 @@
             	<br />
             <form id="registro" action="insertarRegistro.php" method="post">
                 <input type="text" name="nombre" placeholder="Nombre *"
-                maxlength="50" pattern="[A-Za-z]" required>
+                maxlength="50" pattern="[A-Za-z]*" required>
                 
                 <input type="text" name="apellidos" placeholder="Apellidos *" 
-                maxlength="50" pattern="[A-Za-z]" required>
+                maxlength="50" pattern="^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]{1,24}[\s]*)+$" required>
                 
                 <input type="password" name="contrasena" placeholder="Contraseña *" 
                 maxlength="50" required pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" 
@@ -82,7 +82,7 @@
     			<div id="noexiste" style="display: none">;
     			<h4>No es una matricula valida</h4>;
     			</div>
-                <select id="carre" style="display: none" class="contenedor-form" name="carrera" title="Selecciona una carrera" required> 
+                <select id="carre" style="display: none" class="contenedor-form" name="carrera" title="Selecciona una carrera" required>
                 	<option value="">Selecciona Carrera *</option>
                 	<option value="Nutricion">Nutricion</option>
                 	<option value="Psicologia">Psicologia</option>

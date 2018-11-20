@@ -17,7 +17,7 @@
 	$validarcorreo = "SELECT correo_electronico FROM usuarios WHERE correo_electronico = '".$email."'";
 	$re = $conn->query($validarcorreo);
 	$fil = mysqli_num_rows($re);
-	if($fil == 1)
+	if($fil == 1 && preg_match("/^([0-9]{2}[A|B][L])[0-9]{7}$/", $matri) || preg_match("/^([0-9]){3,5}$/", $matri))
 	{
 		header("Location: noexitoCorreoElectronico.php");
 	}else{
@@ -25,9 +25,11 @@
 	$validarmatricula = "SELECT matricula FROM usuarios WHERE matricula = '".$matri."' ";
 	$result = $conn->query($validarmatricula);
 	$fila = mysqli_num_rows($result);
-	if($fila == 1)
+	if($fila == 1 && preg_match("/^([0-9]{2}[A|B][L])[0-9]{7}$/", $matri) || preg_match("/^([0-9]){3,5}$/", $matri))
 	{
 		header("Location: noexitoMatricula.php");
+	}else if ($fila == 1 && preg_match("/^([B][I])[0-9]{3}$/", $matri)) {
+		header("Location: noexitoMatriculaSuper.php");
 	}else{
 	
 	if(preg_match("/^([0-9]{2}[A|B][L])[0-9]{7}$/", $matri))
@@ -49,11 +51,12 @@
 
 	$sql = "INSERT INTO usuarios(nombre, apellidos, contrasena, correo_electronico, matricula, carrera, telefono , tipo_usuario, fecha_registro) 
 	VALUES ('".$name."','".$apellidos."','".$pass."','".$email."','".$matri."','".$licenciatura."','".$telefono."','".$tipousuario."',now())";
+	$conn->query ($sql);
     //Se ejecuta la sentencia de query
-	if($conn->query ($sql) === TRUE && $tipousuario == 'C')
+	if($tipousuario == 'C')
 	{
 		header("Location:exitoregbibliotecario.php");
-	}else if($conn->query ($sql) === TRUE)
+	}else if($tipousuario == 'A' || $tipousuario == 'B')
 	{
 		header("Location:exitoreg.html");
 	}
