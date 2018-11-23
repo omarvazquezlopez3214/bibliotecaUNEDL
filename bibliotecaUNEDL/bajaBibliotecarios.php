@@ -28,7 +28,6 @@
 		<meta name="description" content="">
 		<meta name="author" content="Omar">
 		<link href="css/estilos.css" rel="stylesheet" type="text/css" />
-		<link href="css/estilos2.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 		<header>

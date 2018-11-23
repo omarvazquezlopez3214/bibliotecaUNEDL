@@ -75,16 +75,19 @@
 			<div class="footer">
 				<p class="texto-footer">
 					<br />
-					Dirección: Av Enrique Díaz de León Nte, Zona Centro, 44100<br />
-					Guadalajara, Jal.<br />
-                    Teléfono: 01 33 3825 7580
+					<a href="https://www.unedl.edu.mx/portal/planteles.php">Contáctanos en nuestros diferentes planteles</a>
+					<h3 style="color: white; float: left;"><b>¡Llámanos! Tel.</b> 018009990395</h3>
+					<br /><br />
+					<a href="mailto:unedl.universidad@unedl.edu.mx" style="float: left;">unedl.universidad@unedl.edu.mx</a>
+					<br /><br />
+					<div class="copyright">© Universidad Enrique Díaz de León <!--2014, Innsoft, All rights reserved--></div>
 				</p>
 				<div class="face">
 					<a title="Pagina inicio UNEDL" href="https://www.unedl.edu.mx/portal/"><img src="img/unedl.png" /></a>
 					<a title="Pagina de facebook" href="https://www.facebook.com/unedl.universidad"><img src="img/facebook.png" /></a>
-                    <a href="https://twitter.com/UnedlU?lang=es"><img src="img/twitter.png" title="Pagina de twitter UNEDL" alt="" /></a>-->
-					
+                    <a href="https://twitter.com/UnedlU?lang=es"><img src="img/twitter.png" title="Pagina de twitter UNEDL" alt="" /></a>
 				</div>
+			
 			</div>
 			
 	</body>

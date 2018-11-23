@@ -66,7 +66,7 @@
         	<div class="formulario">
 			<br />
 			<h1>Prestamos de libros</h1>
-			<p>Si quieres obtener todas los prestamos de libros, solo presiona el boton de "Buscar todos".</p>
+			<p>Si quieres obtener todos los prestamos de libros, presiona el boton de "Buscar todos".</p>
 			<br />
 			 <form action="DatosPersonasPrestamos.php" method="get">
                 <input id="usuario" type="text" name="matricula" placeholder="Escriba la matricula del alumno *" required>
@@ -79,7 +79,6 @@
             <div class="formulario">
 			<br />
 			<h1>Prestamos de libros</h1>
-			<p>Si quieres obtener todas los prestamos de libros, solo presiona el boton de "Buscar todos".</p>
 			<br />
 			 <form action="DatosPersonasPrestamosTodos.php" method="get">
 

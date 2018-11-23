@@ -16,7 +16,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset= UTF-8" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <title>Libros</title>
     <link rel="stylesheet" href="css/estilos.css">
 	</head>
@@ -52,11 +52,12 @@
         	<div class="formulario">
 			
 			<h1>Datos del libro</h1>
-			<p>TITULO-AUTOR-PLANTEL-AÑO-ESTATUS</p>
+			<p>Estructura: TITULO-AUTOR-PLANTEL-AÑO-ESTATUS</p>
 			 <form action="aceptarReservaLibro.php" method="post">
 			 	<select id="librosConsulta" name="consultaLibros" class="contenedor-form" required>
 			 		<option value="">Seleccione un libro de la consulta:</option>
 			<?php
+
 			    include("conexionbdd.php");
 				if($conn->connect_error)
 				{

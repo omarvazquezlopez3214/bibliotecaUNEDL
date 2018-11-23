@@ -248,6 +248,7 @@ header{
 	position: absolute;
 	visibility: hidden;
 	z-index: 11;
+	text-decoration: none;
 }
 
 .submenu li a{
@@ -258,6 +259,7 @@ header{
 	font-size: 15px;
 	font-family: "Calibri";
 	text-decoration: none;
+	list-style: none;
 }
 
 .submenu li a:hover{
@@ -266,6 +268,7 @@ header{
 
 .menu-navegacion li:hover .submenu {
 	visibility: visible;
+	list-style: none;
 }
 
 
@@ -384,20 +387,32 @@ header{
 	height: 200px;
 }
 
+.footer a{
+	color: #fff;
+}
+.footer a:hover{
+	color: #ffcc2b;
+}
+
 .footer .texto-footer {
 	width: 400px;
 	height: 50px;
-	color: #EEEEEE;
+}
+
+.footer .face {
+	float: right;
 }
 
 .footer .face img {
-	background: url("img/facebook-logo-de-letra.png"); 
 	width: 40px;
-	float: right;
-	position: relative;
-	margin-top: 30px;
 }
 
+.copyright {
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    float: left;
+}
 
 /*Responsivo*/
 @media screen and (max-width: 900px){

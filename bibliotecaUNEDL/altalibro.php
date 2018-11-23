@@ -65,8 +65,8 @@
         	<div class="formulario">
 			<h1><a style="font-family: Calibri">Alta de Libros</h1>
 			<br />
-			<h2>Datos principales</h2>
-			<h4>(*) Campos obligatorios</h4>
+			<h2 style="font-family: Calibri">Datos principales</h2>
+			<h4 style="font-family: Calibri">(*) Campos obligatorios</h4>
 			 <form action="altaLibros.php" method="post" id="altalibros">
 			 	
 			 	<input type="number" name="Id" placeholder="ID *" required>

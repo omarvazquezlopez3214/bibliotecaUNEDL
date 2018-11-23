@@ -20,10 +20,18 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,
 	    maximun-scale1.0, minimum-scale=1.0" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<link rel="stylesheet" href="css/fontawesome-all.min.css" />
+		<link rel="stylesheet" href="css/nivo-slider.css" />
+		<link rel="stylesheet" href="css/mi-slider.css" />
 	    <link rel="stylesheet" href="css/estilos.css" />
-	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	    <link rel="stylesheet" href="/fonts.css" />
+	    
+	    <script src="js/jquery-3.1.1.min.js"></script>
+		<script src="js/jquery.nivo.slider.js"></script>
+
+	    <script type="text/javascript"> 
+			$(window).on('load', function() {
+		    $('#slider').nivoSlider(); 
+			}); 
+		</script>
 	</head>
 
 	<body>
@@ -50,45 +58,45 @@
 			 </nav>
 			 <div class="cinta"></div>
 			</header>
-			<div class="main">
-				<br /><br /><br />
-		<div class="slides">
-		<img src="img/estudiante.jpg" alt="" />
-		<img src="img/example1.jpg" alt="" />
-		<img src="img/example2.jpg" alt="" />
-		<img src="img/example4.jpg" alt="" />
-		</div>
-	</div>
-	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script src="js/jquery.slides.js"></script>
-	<script>
-		$(function(){
-			$(".slides").slidesjs({
-				play:{
-					active: true,
-					effect: "slides",
-					interval: 5000,
-					auto: true,
-					swap: true,
-					pauseOnHover: false,
-					restartDelay: 2500
-				}
-				});
-		});
-	</script>
+			<br />
+<!--Slider --> <!---->
+		<div class="slider-wrapper theme-mi-slider">
+			<div id="slider" class="nivoSlider">     
+		    	<img src="img/generaciones.jpg" alt="" title="#htmlcaption1" />    
+		    	<img src="img/maestrias-02.jpg" alt="" title="#htmlcaption2" />    
+		    	<img src="img/santander-unedl.jpg" alt="" title="#htmlcaption3" />
+		    	<!--<img src="img/example2.jpg" alt="" title="#htmlcaption4" /> -->     
+			</div>
+
+			<div id="htmlcaption1" class="nivo-html-caption">     
+		    	<h1>Sean Bienvenidos</h1>
+		    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+			</div>
+
+			<div id="htmlcaption2" class="nivo-html-caption">     
+		    	<h1>Acerca de Nosotros</h1>
+			</div>
+
+			<div id="htmlcaption3" class="nivo-html-caption">     
+		    	<h1>Gracias por visitar</h1>
+			</div>
+		</div><!--Aqui termina el slider-->
 			<br /><br /><br /><br /><br /><br /><br /><br /><br />
 			<div class="cinta2"></div>
 			<div class="footer">
 				<p class="texto-footer">
 					<br />
-					Dirección: Av Enrique Díaz de León Nte, Zona Centro, 44100<br />
-					Guadalajara, Jal.<br />
-                    Teléfono: 01 33 3825 7580
+					<a href="https://www.unedl.edu.mx/portal/planteles.php">Contáctanos en nuestros diferentes planteles</a>
+					<h3 style="color: white; float: left;"><b>¡Llámanos! Tel.</b> 018009990395</h3>
+					<br /><br />
+					<a href="mailto:unedl.universidad@unedl.edu.mx" style="float: left;">unedl.universidad@unedl.edu.mx</a>
+					<br /><br />
+					<div class="copyright">© Universidad Enrique Díaz de León <!--2014, Innsoft, All rights reserved--></div>
 				</p>
 				<div class="face">
 					<a title="Pagina inicio UNEDL" href="https://www.unedl.edu.mx/portal/"><img src="img/unedl.png" /></a>
 					<a title="Pagina de facebook" href="https://www.facebook.com/unedl.universidad"><img src="img/facebook.png" /></a>
-                    <a href="https://twitter.com/UnedlU?lang=es"><img src="img/twitter.png" title="Pagina de twitter UNEDL" alt="" /></a>-->
+                    <a href="https://twitter.com/UnedlU?lang=es"><img src="img/twitter.png" title="Pagina de twitter UNEDL" alt="" /></a>
 				</div>
 			</div>
 			

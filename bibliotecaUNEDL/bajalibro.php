@@ -24,7 +24,6 @@
 	<meta http-equiv="Expires" content="0" >
     <title>Baja de Libros</title>
     <link rel="stylesheet" href="css/estilos.css" />
-	<link rel="stylesheet" href="css/estilos2.css" />
 	</head>
 		<body>
 			<header>
