@@ -67,19 +67,6 @@
 		    	<img src="img/santander-unedl.jpg" alt="" title="#htmlcaption3" />
 		    	<!--<img src="img/example2.jpg" alt="" title="#htmlcaption4" /> -->     
 			</div>
-
-			<div id="htmlcaption1" class="nivo-html-caption">     
-		    	<h1>Sean Bienvenidos</h1>
-		    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-			</div>
-
-			<div id="htmlcaption2" class="nivo-html-caption">     
-		    	<h1>Acerca de Nosotros</h1>
-			</div>
-
-			<div id="htmlcaption3" class="nivo-html-caption">     
-		    	<h1>Gracias por visitar</h1>
-			</div>
 		</div><!--Aqui termina el slider-->
 			<br /><br /><br /><br /><br /><br /><br /><br /><br />
 			<div class="cinta2"></div>
