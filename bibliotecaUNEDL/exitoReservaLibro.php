@@ -36,11 +36,11 @@
 			  </div>
 			
 				<ul class="menu-navegacion">
-                    <li><a href="http://unedl.edu.mx/portal/contacto.php?">Contacto</a></li>
+                    <li><a href="http://buzon.unedl.edu.mx/indexbzn.html">Contacto</a></li>
                     <li><a href="consulta.php">Consultar libro</a></li>
                     <li><a href="MenuUsuario.php">Inicio</a></li>
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
-                    <li><a href="logout.php">Cerrar sesion</a></li>
+                    <li><a href="logout.php">Cerrar Sesión</a></li>
 				</ul>
 			 </nav>
 			 <div class="cinta"></div>
@@ -64,21 +64,21 @@
 						//while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
 						//{
 							$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-							echo '<h3>TU LIBRO:</h3>';
+							echo '<h3>Tu libro:</h3>';
 							echo '<h3>"'.$row['titulo'].'"</h3>';
-							echo '<h3>SE RESERVO CON EXITO</h3>';
-							echo '<h3>SE ENCUENTRA EN EL PLANTEL: <p style=" color: blue;">"'.$row['plantel'].'"</p></h3>';
+							echo '<h3>Se reservó con éxito</h3>';
+							echo '<h3>Se encuentra en el plantel: <p style=" color: blue;">"'.$row['plantel'].'"</p></h3>';
 						//}
 					}
 		?>
 	
-	<h3 style="color: red;">TIENES 12 HORAS PARA</h3>
-    <h3 style="color: red;">SOLICITAR EL LIBRO EN LA BIBLIOTECA,</h3>
-	<h3 style="color: red;">DE LO CONTRARIO SE CANCELARA LA RESERVA</h3>
-	<h3>Tienes 3 dias hábiles para la devolucion del libro,</h3>
-	<h3>de lo contrario se cobraran $5 por dia transcurrido.</h3>
+	<h3 style="color: red;">Tienes 12 horas para </h3>
+    <h3 style="color: red;">solicitar el libro en la biblioteca,</h3>
+	<h3 style="color: red;">de lo contrario se cancelará la reserva</h3>
+	<h3>Tienes 3 días hábiles para la devolución del libro,</h3>
+	<h3>de lo contrario se cobrarán $5.00 por día transcurrido.</h3>
 	<br />
-	<h3>Menu principal.</h3>
+	<h3>Menú principal.</h3>
 	</div>
 	<div class="logo">
 		<a href="MenuUsuario.php"><img src="img/casa.png" width="120" height="120" /></a>

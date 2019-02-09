@@ -53,9 +53,9 @@
 			  	</div>
 			
 				<ul class="menu-navegacion">
-                    <li><a href="http://unedl.edu.mx/portal/contacto.php?">Contacto</a></li>
+                    <li><a href="http://buzon.unedl.edu.mx/indexbzn.html">Contacto</a></li>
                     <li><a href="MenuPrincipal.php">Inicio</a></li>
-                    <li><a href="log-in.php">Iniciar sesion o registrate</a></li>
+                    <li><a href="log-in.php">Inicia Sesión o Registrate</a></li>
 				</ul>
 			</nav>
 				<div class="cinta"></div>

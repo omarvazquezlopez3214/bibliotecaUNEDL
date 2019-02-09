@@ -28,7 +28,7 @@
 			  </div>
 			
 				<ul class="menu-navegacion">
-                    <li><a href="http://unedl.edu.mx/portal/contacto.php?">Contacto</a></li>
+                    <li><a href="http://buzon.unedl.edu.mx/indexbzn.html">Contacto</a></li>
                     <li><a href="ConsultaAdmin.php">Consultar libro</a></li>
                     <li><a href="MenuAdmin.php">Inicio</a></li>
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>

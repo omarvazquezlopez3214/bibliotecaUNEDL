@@ -25,9 +25,9 @@
               </div>
             
                 <ul class="menu-navegacion">
-                    <li><a href="http://unedl.edu.mx/portal/contacto.php?">Contacto</a></li>
+                    <li><a href="http://buzon.unedl.edu.mx/indexbzn.html">Contacto</a></li>
                     <li><a href="MenuPrincipal.php">Inicio</a></li>
-                    <li><a href="log-in.php">Iniciar sesion o registrate</a></li>
+                    <li><a href="log-in.php">Inicia Sesión o Registrate</a></li>
                 </ul>
              </nav>
              <div class="cinta">
@@ -42,7 +42,7 @@
         <div id="logi" class="formulario">
             <h2>Inicia Sesión</h2>
             <form action="login.php" method="post">
-                <input type="text" name="mn" placeholder="Matricula o Numero de colaborador" required>
+                <input type="text" name="mn" placeholder="Matrícula o Número de colaborador" required>
                 <input type="password" name="pa" placeholder="Contraseña" required>
                 <input type="submit" value="Iniciar Sesión"> <br /> <br />
                 <input type="submit" value="Cancelar" onclick="location.href= 'MenuPrincipal.html'">
@@ -83,7 +83,7 @@
     			<h4>No es una matricula valida</h4>;
     			</div>
                 <select id="carre" style="display: none" class="contenedor-form" name="carrera" title="Selecciona una carrera" required>
-                	<option value="">Selecciona Carrera *</option>
+                	<option value="">Seleccionar Programa Académico *</option>
                 	<option value="Nutricion">Nutricion</option>
                 	<option value="Psicologia">Psicologia</option>
                 	<option value="Administracion de Empresas">Administracion de Empresas</option>
@@ -98,6 +98,8 @@
                 	<option value="Mercadotecnia">Mercadotecnia</option>
                 	<option value="Negocios Internacionales">Negocios Internacionales</option>
                 	<option value="Turismo">Turismo</option>
+                    <option value="Turismo">PosGrado</option>
+                    <option value="Turismo">Preparatoria</option>
                 	</select><br /> <br />
                 	
                 	<input type="tel" name="telefono" placeholder="Teléfono *"
@@ -107,7 +109,7 @@
                     </form>
         </div>
         <div id="olvide-contra" class="reset-password">
-            Olvide mi Contraseña?
+            ¿Olvide mi Contraseña?
         </div>
         <div class="formulario2">
         	<h2>Recupera tu contraseña</h2>

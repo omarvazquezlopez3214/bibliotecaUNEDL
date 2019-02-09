@@ -35,12 +35,12 @@
 			  </div>
 			
 				<ul class="menu-navegacion">
-                    <li><a href="http://unedl.edu.mx/portal/contacto.php?">Contacto</a></li>
+                    <li><a href="http://buzon.unedl.edu.mx/indexbzn.html">Contacto</a></li>
                     <li><a href="consulta.php">Consultar libro</a></li>
                     <li><a href="MenuUsuario.php">Inicio</a></li>
                      <li><a href="dewey.php" target="_blank">Dewey</a></li>
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
-                    <li><a href="logout.php">Cerrar sesion</a></li>
+                    <li><a href="logout.php">Cerrar Sesión</a></li>
 				</ul>
 			 </nav>
 			 <div class="cinta"></div>
