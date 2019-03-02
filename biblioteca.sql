@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-11-2018 a las 17:57:38
--- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 5.6.30
+-- Tiempo de generación: 02-03-2019 a las 23:47:18
+-- Versión del servidor: 10.1.38-MariaDB
+-- Versión de PHP: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,25 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `biblioteca`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `alumnos`
+--
+
+CREATE TABLE `alumnos` (
+  `id` int(11) NOT NULL,
+  `nombre_alumno` varchar(50) NOT NULL,
+  `matricula_alumno` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `alumnos`
+--
+
+INSERT INTO `alumnos` (`id`, `nombre_alumno`, `matricula_alumno`) VALUES
+(1, 'Omar Vazquez Lopez', '15AL4500233');
 
 -- --------------------------------------------------------
 
@@ -22163,6 +22182,12 @@ INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellidos`, `contrasena`, `corr
 --
 
 --
+-- Indices de la tabla `alumnos`
+--
+ALTER TABLE `alumnos`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `reservalibros`
 --
 ALTER TABLE `reservalibros`
@@ -22179,10 +22204,16 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `alumnos`
+--
+ALTER TABLE `alumnos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de la tabla `reservalibros`
 --
 ALTER TABLE `reservalibros`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

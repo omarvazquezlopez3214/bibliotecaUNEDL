@@ -51,7 +51,7 @@
 	$mail->Body .= "<h1 style='color:#3498db;'>Biblioteca UNEDL: </h1>";
 	$mail->Body .= "<p>Copia el siguiente link, en tu barra de navegacion y</p>";
 	$mail->Body .= "<p>te reenviara a una pantalla para cambiar tu contrasena</p>";
-	$mail->Body .= 'localhost/bibliotecaUNEDL/cambiarcontrasena.html'; //AQUI SE INGRESARA EL LINK DEL FORMULARIO DE CAMBIAR CONTRASEÑA
+	$mail->Body .= 'http://localhost/bibliotecaUNEDL/cambiarcontrasena.html'; //AQUI SE INGRESARA EL LINK DEL FORMULARIO DE CAMBIAR CONTRASEÑA
 	$mail->Body .= "<p>Fecha y Hora: ".date("d-m-Y h:i:s")."</p>";
 	
 	$mail->IsHTML(true);

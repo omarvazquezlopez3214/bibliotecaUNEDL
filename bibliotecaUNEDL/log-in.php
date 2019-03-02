@@ -71,17 +71,8 @@
                 
                 <input type="text" id="matri" name="matricula" placeholder="Matrícula o Numero de colaborador *" 
                 maxlength="50" pattern="*[A-Za-z0-9]" required title="Solo letras y números">
-                <p>Porfavor presiona el boton de validar matricula, o Numero de colaborador para identificarte como alumno de la Universidad Enrique Diaz De Leon.</p>
-            
-                <input class = "profesor" type="button" value="Validar matricula o Numero de colaborador" formnovalidate>
+                <div id="resultado"></div>
 
-                <br />
-                <div id="maestro" style="display: none">;
-    			<h4>Colaborador</h4>;
-    			</div>
-    			<div id="noexiste" style="display: none">;
-    			<h4>No es una matricula valida</h4>;
-    			</div>
                 <select id="carre" style="display: none" class="contenedor-form" name="carrera" title="Selecciona una carrera" required>
                 	<option value="">Seleccionar Programa Académico *</option>
                 	<option value="Nutricion">Nutricion</option>
@@ -122,5 +113,64 @@
     </div>
     <script src="js/jquery-3.1.1.min.js"></script>    
     <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+                         
+        var consulta; 
+      //hacemos focus
+      $("#matri").focus();                                    
+      //comprobamos si se pulsa una tecla
+      $("#matri").keyup(function(e){
+         //obtenemos el texto introducido en el campo
+         consulta = $("#matri").val();                      
+         //hace la búsqueda
+         $("#resultado").delay(1000).queue(function(n) {      
+                                       
+            $("#resultado").html('<img src="ajax-loader.gif" />');
+                                       
+                  $.ajax({
+                        type: "POST",
+                        url: "existeusuario.php",
+                        data: "m="+consulta,
+                        dataType: "html",
+                        error: function(){
+                              alert("error petición ajax");
+                        },
+                        success: function(data){
+                              $("#resultado").html(data);
+                              n();
+                        }
+              });
+                                           
+             });
+                                
+      });
+                          
+});
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#matri").focus(); 
+            $("#matri").keyup(function(e){
+              var matricula = document.getElementById("matri").value;
+              var expre = /^([0-9]{2}[A|B][L])[0-9]{7}$/;
+              var expres = /^([0-9]){3,5}$/;
+              if(expre.test(matricula))
+              {
+                document.getElementById("carre").style.display = "block";
+                $('#carre').prop("required", true);
+              }else if(expres.test(matricula))
+              {
+                $('#carre').removeAttr("required");
+                document.getElementById("carre").style.display = "none";
+              }else
+              {
+                $('#carre').prop("required", true);
+                document.getElementById("carre").style.display = "none";
+              }
+            });
+        });
+    </script>
 </body>
 </html>
