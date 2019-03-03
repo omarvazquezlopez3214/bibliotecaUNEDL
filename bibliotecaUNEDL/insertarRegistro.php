@@ -35,7 +35,7 @@
 	if(preg_match("/^([0-9]{2}[A|B][L])[0-9]{7}$/", $matri))
 	{
 		$tipousuario='A'; //Alumno 	
-	}else if(preg_match("/^([0-9]){3,5}$/", $matri))
+	}else if(preg_match("/^([0-9]){1,5}$/", $matri))
 		{
 			$tipousuario='B'; //Maestro
 		}else if(preg_match("/^([B][I])[0-9]{3}$/", $matri))

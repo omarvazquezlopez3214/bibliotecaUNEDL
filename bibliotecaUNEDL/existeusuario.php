@@ -17,10 +17,18 @@
             $matricula = "SELECT * FROM alumnos WHERE matricula_alumno = '".$m."'";
             $re = $conn->query($matricula);
             $fil = mysqli_num_rows($re);
+            $numerocolaborador = "SELECT * FROM maestros WHERE cuenta_nomipaq = '".$m."'";
+            $res = $conn->query($numerocolaborador);
+            $fila = mysqli_num_rows($res);
             
             if($fil == 1){
-                  echo "<span id='disponible' style='font-weight:bold;color:green;'>Matrícula o número de colaborador válido.</span>";
-            }else{
+                  echo "<span id='disponible' style='font-weight:bold;color:green;'>Matrícula válida.</span>";
+                  
+            }else if($fila == 1){
+                  echo "<span id='nodisponible' style='font-weight:bold;color:green;'>Número de colaborador válido.</span>";
+                  
+            }else
+            {
                   echo "<span id='nodisponible' style='font-weight:bold;color:red;'>No es una matrícula o número de colaborador válido.</span>";
             }
       }     
