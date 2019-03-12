@@ -68,7 +68,7 @@ $('.buscartodos').click(function(){
                               {
                                 $('#carre').removeAttr("required");
                                 document.getElementById("carre").style.display = "none";
-                              }else
+                              }else if($("#resultado").text() == "No es una matrícula o número de colaborador válido.")
                               {
                                 $('#carre').prop("required", true);
                                 document.getElementById("carre").style.display = "none";
