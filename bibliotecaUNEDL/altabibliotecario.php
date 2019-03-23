@@ -1,5 +1,7 @@
 <?php
+//Mantiene iniciada la sesion del usuario
     @session_start();
+    //valida que tipo de usuario es dependiendo su matricula
     if(!isset($_SESSION["matricula"])) 
     {
         header("Location: log-in.php");
@@ -20,7 +22,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<!--Head de la pagina y sus estilos-->
     <meta charset="UTF-8">
     <meta http-equiv="Expires" content="0" >
     <title>Alta bibliotecario UNEDL</title>
@@ -31,6 +33,7 @@
 </head>
 <body>
 	<header>
+        <!--Header donde se encuentra el logo y los estilos-->
                 <nav class="menu">
               <div class="contenido-menu">
                 <div class="logo">
@@ -42,7 +45,7 @@
                     </div>
                 </div>
               </div>
-            
+            <!--Menu de navegacion Super usuario--> 
                 <ul class="menu-navegacion">
                     <li><a href="MenuSuperUsuario.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -63,22 +66,23 @@
                     <li><a href="prestamossuper.php">Prestamos</a></li>
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
-                    <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
                 </ul>
              </nav>
+             <!--Cintilla debajo del menu de navegacion-->
              <div class="cinta">
-                
             </div>
             </header>
     <div class="contenedor-form">
         <div class="toggle2">
         </div>
+        <!--Formulario a llenar para dar de alta-->
         <div class="formulario">
             <h2>Crear cuenta de bibliotecarios</h2>
             <h4>Pasar cursor encima del campo 
             	para checar requerimientos.</h4>
             <h4>(*) Campos obligatorios</h4>	
             	<br />
+                <!--Registro o Formulario-->
             <form id="registro" action="insertarRegistro.php" method="post">
                 <input type="text" name="nombre" placeholder="Nombre *"
                 maxlength="50" pattern="[A-Za-z]*" required>
@@ -97,15 +101,16 @@
                 maxlength="50" pattern="*[A-Za-z0-9]" required title="Solo letras y números">
 
                 <p>Por favor presionar el boton para validar la matrícula.</p>
-            
+            <!--Boton para validar matricula-->
                 <input class = "bibliotecario" type="button" value="Validar Matrícula" formnovalidate>
-
+             <!--Si hay error en la matricula ingresada-->
                 <br />
                 <div id="noexiste" style="display: none">;
                 <h4>No es una matricula valida</h4>;
                 </div>
 
                 <select id="carre" style="display: none" class="contenedor-form" name="carrera" title="Selecciona una carrera" required> 
+                    <!--Lista de planteles de las bibliotecas-->
                 	<option value="">Selecciona plantel *</option>
                 	<option value="Nutricion">Nutricion</option>
                 	<option value="Centro Universitario">Centro Universitario</option>
@@ -115,6 +120,7 @@
                 	</select><br /> <br />
                 	<input type="tel" name="telefono" placeholder="Teléfono *"
                 pattern="[0-9]{10}" required>
+                <!--Botones-->
                 	<input type="submit" value="Registrar"> <br /> <br />
                 	<input type="submit" value="Cancelar" onclick="location.href='MenuSuperUsuario.php'">
                     </form>

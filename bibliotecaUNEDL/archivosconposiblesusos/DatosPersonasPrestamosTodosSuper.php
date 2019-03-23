@@ -1,5 +1,7 @@
 <?php
+//Mantiene iniciada la sesion del usuario
 	@session_start();
+	//valida que tipo de usuario es dependiendo su matricula
     if(!isset($_SESSION["matricula"])) 
     {
         header("Location: log-in.php");
@@ -20,10 +22,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!--Head de la pagina y sus estilos-->
 		<meta charset="utf-8">
-
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
 		<title>Personas con libros prestados</title>
 		<meta name="description" content="">
 		<meta name="author" content="Omar">
@@ -31,6 +32,7 @@
 	</head>
 	<body>
 		<header>
+			<!--Header donde se encuentra el logo y los estilos-->
 				<nav class="menu">
 			  <div class="contenido-menu">
 				<div class="logo">
@@ -43,7 +45,7 @@
 					</div>
 				</div>
 			  </div>
-			
+			<!--Menu de navegacion Super usuario-->
 				<ul class="menu-navegacion">
 					<li><a href="MenuSuperUsuario.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -67,6 +69,7 @@
                     <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+			 <!--Cintilla debajo del menu de navegacion-->
 			 <div class="cinta"></div>
 			</header>
 			<div class="contenedor-form">
@@ -92,7 +95,7 @@
 					          if($resultado = $conn->query($validarmatricula))
 					          {
 							  while($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC))
-							  {
+							  {//Consulta en BDD y recupera datos del libro y usuario
 							  echo '<option value ="'.$row[id_libro].'">'.$row[titulo].' - '.$row[autor].' - '.$row[plantel].' - '.$row[ano].' - '.$row[nombre].' - '.$row[apellidos].' - '.$row[correo_electronico].' - '.$row[matricula].' - '.$row[carrera].' - '.$row[telefono].' - '.$row[fecha_prestamo].'</option>';
 							  }	
 							  }else
@@ -104,11 +107,13 @@
 			 	        	</select>
 			 				<select id="personaReservaLibro" name="personaEstatusEnPrestamo" class="contenedor-form" required>
 			 				<option value="">Selecciona el estatus para la devolucion del libro *</option>
+			 				<!--Lista de dosponibilidad del libro-->
 			 				<option value="DISPONIBLE">Disponible</option>
 			 				<option value="CONSULTA INTERNA">Consulta Interna</option>
 			 				<option value="RESERVADO">Reservado</option>
 			 				<option value="PRESTAMO">Prestamo</option>
 			 				</select>
+			 				<!--Botones-->
 			 				<input type="submit" value="Aceptar "> <br /> <br />
                 			<input type="button" value="Cancelar" onclick="location.href='prestamossuper.php'">
 							</form>

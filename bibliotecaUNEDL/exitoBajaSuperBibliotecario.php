@@ -1,5 +1,7 @@
 <?php
+//Mantiene iniciada la sesion del usuario
 	@session_start();
+	 //valida que tipo de usuario es dependiendo su matricula
     if(!isset($_SESSION["matricula"])) 
 	{
 	header("Location: log-in.php");	
@@ -20,12 +22,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!--Head de la pagina y sus estilos-->
     <meta charset="UTF-8">
     <title>Página baja de bibliotecario exitoso</title>
     <link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
 	<header>
+		 <!--Header donde se encuentra el logo y los estilos-->
 				<nav class="menu">
 			  <div class="contenido-menu">
 				<div class="logo">
@@ -38,7 +42,7 @@
 					</div>
 				</div>
 			  </div>
-			
+			<!--Menu de navegacion Super usuario--> 
 				<ul class="menu-navegacion">
 					<li><a href="MenuSuperUsuario.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -59,22 +63,25 @@
                     <li><a href="prestamossuper.php">Prestamos</a></li>
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
-                    <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+			  <!--Cintilla debajo del menu de navegacion-->
 			 <div class="cinta"></div>
 			</header>
 			<div class="contenedor-form">
 				<div class="registroexitoso">
 				<br />
+				<!--Contenido del body-->
 				<h3>EL BIBLIOTECARIO SE DIO DE BAJA CON EXITO</h3>
 				<br />
 				<h3>Menu principal.</h3>
 				</div>
+				<!--Boton menu principal-->
 				<div class="logo">
 				<a href="MenuSuperUsuario.php"><img src="img/casa.png" width="120" height="120" /></a> <!--AQUI VA LA PAGINA DE MENU EN VES DE INDEX.HTML-->
 				</div>
 				<br />
+				<!--Boton para eliminar otro-->
 				<div class="registroexitoso">
     			<h3>Eliminar otro bibliotecario.</h3>
     			</div>

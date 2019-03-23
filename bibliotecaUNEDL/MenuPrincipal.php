@@ -1,5 +1,7 @@
 <?php
+//Mantiene la sesion iniciada
     @session_start();
+    //dependiendo la matricula define el tipo de usuario que le dara
 	  if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'A') 
 	    {
 	        header("Location: MenuUsuario.php");
@@ -18,6 +20,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<!--el formato de los estilos en CSS-->
 	<head>
 		<title>Menu Principal</title>
 		<link href="css/estilos.css" rel="stylesheet" type="text/css" />
@@ -37,7 +40,7 @@
 			}); 
 		</script>
 	</head>
-
+<!--estilos en CSS del Header-->
 	<body>
 		<header>
 			<nav class="menu">
@@ -58,10 +61,12 @@
                     <li><a href="log-in.php">Inicia Sesión o Registrate</a></li>
 				</ul>
 			</nav>
+			<!--Linea azul que esta debajo del menu de navegacion-->
 				<div class="cinta"></div>
 		</header>
 		<br />
 <!--Slider --> <!---->
+<!--slider donde aparecen las imagenes publicitarias de UNEDL-->
 		<div class="slider-wrapper theme-mi-slider">
 			<div id="slider" class="nivoSlider">     
 		    	<img src="img/generaciones.jpg" alt="" title="#htmlcaption1" />    
@@ -73,7 +78,7 @@
 		</div><!--Aqui termina el slider-->
 		<br /><br /><br /><br /><br /><br /><br /><br /><br />
 				<div class="cinta2"></div>
-
+<!--Footer donde aparecen las redes sociales y demas-->
 			<div class="footer">
 				<p class="texto-footer">
 					<br />

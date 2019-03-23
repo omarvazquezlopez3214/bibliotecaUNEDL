@@ -60,34 +60,21 @@
 			</header>
 			<br /><br />
 			<div class="contenedor-form">
-			<div class="toggle">
-				<span>Buscar Todos</span>
+			<div class="toggle2">
         	</div>
         	<div class="formulario">
 			<br />
 			<h1>Prestamos de libros</h1>
-			<p>Si quieres obtener todos los prestamos de libros, presiona el boton de "Buscar todos".</p>
+			<p>Introduce la matricula del alumno o colaborador.</p>
 			<br />
 			 <form action="DatosPersonasPrestamos.php" method="get">
                 <input id="usuario" type="text" name="matricula" placeholder="Escriba la matricula del alumno *" required>
 
                 <input type="submit" value="Buscar por persona"> <br /> <br />
-                
-                <input type="submit" value="Cancelar" onclick="location.href = 'MenuAdmin.php'">
-              </form>
-            </div>
-            <div class="formulario">
-			<br />
-			<h1>Prestamos de libros</h1>
-			<br />
-			 <form action="DatosPersonasPrestamosTodos.php" method="get">
-
-                <input type="submit" value="Buscar todos"> <br /> <br />
-                
+                <input type="button" value="Buscar por fechas" onclick="location.href = 'DatosDeLibrosPrestamos.php'">
                 <input type="button" value="Cancelar" onclick="location.href = 'MenuAdmin.php'">
               </form>
             </div>
-          
 		</div>
             <br />
 		</div>

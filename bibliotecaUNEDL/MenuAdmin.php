@@ -1,7 +1,9 @@
 <?php
+//Mantiene la sesion iniciada
 	@session_start();
 	if(!isset($_SESSION["matricula"])) 
 	{
+		//dependiendo la matricula define el tipo de usuario que le dara
 	header("Location: log-in.php");	
 	}else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'A') 
 	    {
@@ -17,6 +19,7 @@
 	    }
 ?>
 <!DOCTYPE html>
+<!--el formato de los estilos en CSS-->
 <html lang="en">
 	<head>
 		<title>Menu Admin</title>
@@ -31,6 +34,7 @@
 	</head>
 
 	<body>
+		<!--estilos en CSS del Header-->
 			<header>
 				<nav class="menu">
 			  <div class="contenido-menu">
@@ -43,7 +47,7 @@
 					</div>
 				</div>
 			  </div>
-			
+			<!--Menu de navegacion del administrador-->
 				<ul class="menu-navegacion">
                     <li><a href="MenuAdmin.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -57,16 +61,18 @@
                     <li><a href="prestamos.php">Prestamos</a></li>
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
-                    <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+			  <!--Cintilla debajo del menu de navegacion-->
 			 <div class="cinta"></div>
 			</header>
 			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			 <!--Cintilla arriba donde se encuentran los datos de UNEDL-->
 			<div class="cinta2"></div>
 			<div class="footer">
 				<p class="texto-footer">
 					<br />
+					<!--footer de la pagina-->
 					<a href="https://www.unedl.edu.mx/portal/planteles.php">Contáctanos en nuestros diferentes planteles</a>
 					<h3 style="color: white; float: left;"><b>¡Llámanos! Tel.</b> 018009990395</h3>
 					<br /><br />

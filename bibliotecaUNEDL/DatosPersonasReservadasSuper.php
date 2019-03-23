@@ -1,5 +1,7 @@
 <?php
+//Mantiene iniciada la sesion del usuario
 	@session_start();
+	//valida que tipo de usuario es dependiendo su matricula
     if(!isset($_SESSION["matricula"])) 
     {
         header("Location: log-in.php");
@@ -20,10 +22,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!--Head de la pagina y sus estilos-->
 		<meta charset="utf-8">
-
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
 		<title>Personas con libros reservados</title>
 		<meta name="description" content="">
 		<meta name="author" content="Omar">
@@ -31,6 +32,7 @@
 	</head>
 	<body>
 		<header>
+			<!--Header donde se encuentra el logo y los estilos-->
 				<nav class="menu">
 			  <div class="contenido-menu">
 				<div class="logo">
@@ -43,7 +45,7 @@
 					</div>
 				</div>
 			  </div>
-			
+			<!--Menu de navegacion Super usuario-->
 				<ul class="menu-navegacion">
 					<li><a href="MenuSuperUsuario.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -64,14 +66,15 @@
                     <li><a href="prestamossuper.php">Prestamos</a></li>
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
-                    <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+			 <!--Cintilla debajo del menu de navegacion-->
 			 <div class="cinta"></div>
 			</header>
 			<div class="contenedor-form">
 				<div class="toggle2">
 				</div>
+				<!--Formulario-->
 			 <div class="formulario">
 			 <h1>Reservados</h1>
 			 <p>Persona y sus libros reservados.</p>
@@ -103,7 +106,7 @@
 					
 			 		?>
 			 	</select>
-                
+                <!--Botones-->
                 <input type="submit" value="Aceptar "> <br /> <br />
                 
                 <input type="button" value="Cancelar" onclick="location.href='reservadossuper.php'">

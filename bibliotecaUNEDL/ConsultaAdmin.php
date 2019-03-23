@@ -1,5 +1,7 @@
 <?php
+//Mantiene la sesion iniciada
 	@session_start();
+    //dependiendo la matricula define el tipo de usuario que le dara
     if(!isset($_SESSION["matricula"])) 
     {
         header("Location: log-in.php");
@@ -18,6 +20,7 @@
     }
 ?>
 <!DOCTYPE html>
+<!--el formato de los estilos en CSS-->
 <html lang="en">
 	<head>
 	<meta charset="UTF-8">
@@ -26,6 +29,7 @@
 	</head>
 		<body>
 			<header>
+                <!--estilos en CSS del Header-->
 				<nav class="menu">
 			  <div class="contenido-menu">
 				<div class="logo">
@@ -38,7 +42,7 @@
 					</div>
 				</div>
 			  </div>
-			
+			<!--Menu de navegacion del administrador-->
 				<ul class="menu-navegacion">
                     <li><a href="MenuAdmin.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -52,9 +56,9 @@
                     <li><a href="prestamos.php">Prestamos</a></li>
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
-                    <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+             <!--Cintilla debajo del menu de navegacion-->
 			 <div class="cinta"></div>
 			</header>
 		<div class="contenedor-form">
@@ -62,23 +66,24 @@
              <span></span>
         	 </div>
 			 <div class="formulario">
+                <!--Formulario para consulta de libros-->
 			 <h1><a style="font-family: Calibri">Consulta de libros</h1>
 			 <br />
 			 <h2>Escribe en el campo conforme a la modalidad de búsqueda.</h2>
 			 <form action="DatosConsultaLibroAdmin.php">
-			 	
+			 	<!--Lista de modalidad de busqueda-->
 			 	 <select class="contenedor-form" name="modalidadBusqueda" required title="Modalidad de busqueda"> 
                 	<option value="">Selecciona una modalidad de búsqueda</option>
                 	<option value="Titulo">Título del libro</option>
                 	<option value="Autor">Autor del libro</option>
                 	<option value="Dewey">Código dewey</option>
                 	</select>
-			 	
+			 	<!--Espacio para escribir Título, Autor ó Código Dewey-->
                 <input type="text" name="busqueda" placeholder="Título, Autor ó Código Dewey" title="Solo letras mayusculas o digitos" required>
                 <br /> <br />
-                
+                <!--Boton de Buscar-->
                 <input type="submit" value="Buscar"> <br /> <br />
-                
+                <!--Boton de cancelar-->
                 <input type="submit" value="Cancelar" onclick="location.href='MenuAdmin.php'">
               </form>
             </div>

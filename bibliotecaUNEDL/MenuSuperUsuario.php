@@ -1,5 +1,7 @@
 <?php
+//Mantiene el inicio de sesion  
 	@session_start();
+	//manda a la pagina dependiendo el tipo de usuario
 	if(!isset($_SESSION["matricula"])) 
 	{
 		header("Location: log-in.php");
@@ -20,6 +22,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!--Head de la pagina y sus estilos-->
 		<title>Menu Super Usuario</title>
 		<link href="css/estilos.css" rel="stylesheet" type="text/css" />
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,
@@ -30,9 +33,9 @@
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	    <link rel="stylesheet" href="/fonts.css" />
 	</head>
-
 	<body>
 			<header>
+				<!--Header donde se encuentra el logo y los estilos-->
 				<nav class="menu">
 			  <div class="contenido-menu">
 				<div class="logo">
@@ -44,7 +47,7 @@
 					</div>
 				</div>
 			  </div>
-			
+			<!--Menu de navegacion Super usuario--> 
 				<ul class="menu-navegacion">
 					<li><a href="MenuSuperUsuario.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -65,16 +68,18 @@
                     <li><a href="prestamossuper.php">Prestamos</a></li>
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
-                    <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+			 <!--Cintilla debajo del menu de navegacion-->
 			 <div class="cinta"></div>
 			</header>
 			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			<!--Cintilla arriba del footer donde se encuentra la info de unedl-->
 			<div class="cinta2"></div>
 			<div class="footer">
 				<p class="texto-footer">
 					<br />
+					<!--Informacion del Footer-->
 					<a href="https://www.unedl.edu.mx/portal/planteles.php">Contáctanos en nuestros diferentes planteles</a>
 					<h3 style="color: white; float: left;"><b>¡Llámanos! Tel.</b> 018009990395</h3>
 					<br /><br />
@@ -87,8 +92,6 @@
 					<a title="Pagina de facebook" href="https://www.facebook.com/unedl.universidad"><img src="img/facebook.png" /></a>
                     <a href="https://twitter.com/UnedlU?lang=es"><img src="img/twitter.png" title="Pagina de twitter UNEDL" alt="" /></a>
 				</div>
-			
 			</div>
-			
 	</body>
 </html>

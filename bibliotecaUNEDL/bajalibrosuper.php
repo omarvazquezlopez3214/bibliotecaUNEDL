@@ -1,5 +1,7 @@
 <?php
+//Mantiene el inicio de sesion  
 	@session_start();
+    //manda a la pagina dependiendo el tipo de usuario
     if(!isset($_SESSION["matricula"])) 
     {
         header("Location: log-in.php");
@@ -20,6 +22,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+        <!--Head de la pagina y sus estilos-->
 	<meta charset="UTF-8">
 	<meta http-equiv="Expires" content="0" >
     <title>Baja de Libros</title>
@@ -27,6 +30,7 @@
 	</head>
 		<body>
 			<header>
+                <!--Header donde se encuentra el logo y los estilos-->
 				<nav class="menu">
 			  <div class="contenido-menu">
 				<div class="logo">
@@ -39,7 +43,7 @@
 					</div>
 				</div>
 			  </div>
-			
+			<!--Menu de navegacion Super usuario--> 
 				<ul class="menu-navegacion">
                     <li><a href="MenuSuperUsuario.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -60,22 +64,23 @@
                     <li><a href="prestamossuper.php">Prestamos</a></li>
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
-                    <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+             <!--Cintilla debajo del menu de navegacion-->
 			 <div class="cinta"></div>
 			</header>
 		<div class="contenedor-form">
 			<div class="toggle2">
              <span></span>
         	 </div>
+             <!--Formulario-->
 			 <div class="formulario">
 			 <h1><a style="font-family: Calibri;">Baja de Libros</h1>
 			 <h4>(*) Campos obligatorios</h4>
 			 <br />
 			 <form action="bajaLibrosSuper.php" method="get">
                 <input type="text" name="Id" placeholder="ID del libro *" required>
-                
+                <!--Botones-->
                 <input type="submit" value="Aceptar "> <br /> <br />
                 
                 <input type="submit" value="Cancelar" onclick="location.href='MenuSuperUsuario.php'">

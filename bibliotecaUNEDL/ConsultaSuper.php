@@ -1,5 +1,7 @@
 <?php
+//Mantiene iniciada la sesion del usuario
 	@session_start();
+    //valida que tipo de usuario es dependiendo su matricula
     if(!isset($_SESSION["matricula"])) 
     {
         header("Location: log-in.php");
@@ -20,12 +22,14 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+        <!--Head de la pagina y sus estilos-->
 	<meta charset="UTF-8">
     <title>Consulta de libros</title>
     <link rel="stylesheet" href="css/estilos.css" />
 	</head>
 		<body>
 			<header>
+                 <!--Header donde se encuentra el logo y los estilos-->
 				<nav class="menu">
 			  <div class="contenido-menu">
 				<div class="logo">
@@ -38,7 +42,7 @@
 					</div>
 				</div>
 			  </div>
-			
+			<!--Menu de navegacion Super usuario--> 
 				<ul class="menu-navegacion">
                     <li><a href="MenuSuperUsuario.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -59,15 +63,16 @@
                     <li><a href="prestamossuper.php">Prestamos</a></li>
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
-                    <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+             <!--Cintilla debajo del menu de navegacion-->
 			 <div class="cinta"></div>
 			</header>
 		<div class="contenedor-form">
 			<div class="toggle2">
              <span></span>
         	 </div>
+             <!--Formulario-->
 			 <div class="formulario">
 			 <h1><a style="font-family: Calibri">Consulta de libros</h1>
 			 <br />
@@ -75,7 +80,8 @@
 			 <form action="DatosConsultaLibroSuper.php">
 			 	
 			 	 <select class="contenedor-form" name="modalidadBusqueda" required title="Modalidad de busqueda"> 
-                	<option value="">Selecciona una modalidad de búsqueda</option>
+                	<!--Tipos de busqueda-->
+                    <option value="">Selecciona una modalidad de búsqueda</option>
                 	<option value="Titulo">Título del libro</option>
                 	<option value="Autor">Autor del libro</option>
                 	<option value="Dewey">Código dewey</option>
@@ -83,7 +89,7 @@
 			 	
                 <input type="text" name="busqueda" placeholder="Título, Autor ó Código Dewey" title="Solo letras mayusculas o digitos" required>
                 <br /> <br />
-                
+                <!--Botones-->
                 <input type="submit" value="Buscar"> <br /> <br />
                 
                 <input type="submit" value="Cancelar" onclick="location.href='MenuSuperUsuario.php'">

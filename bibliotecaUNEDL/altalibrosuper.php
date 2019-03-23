@@ -1,5 +1,7 @@
 <?php
+//Mantiene el inicio de sesion  
 	@session_start();
+    //manda a la pagina dependiendo el tipo de usuario
     if(!isset($_SESSION["matricula"])) 
     {
         header("Location: log-in.php");
@@ -19,6 +21,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<!--Head de la pagina y sus estilos-->
 	<head>
 	<meta charset="UTF-8">
 	<meta http-equiv="Expires" content="0" >
@@ -27,6 +30,7 @@
 	</head>
 	<body>
 		<header>
+            <!--Header donde se encuentra el logo y los estilos-->
 				<nav class="menu">
 			  <div class="contenido-menu">
 				<div class="logo">
@@ -39,7 +43,7 @@
 					</div>
 				</div>
 			  </div>
-			
+			<!--Menu de navegacion Super usuario--> 
 				<ul class="menu-navegacion">
                     <li><a href="MenuSuperUsuario.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -60,9 +64,9 @@
                     <li><a href="prestamossuper.php">Prestamos</a></li>
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
-                    <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+             <!--Cintilla debajo del menu de navegacion-->
 			 <div class="cinta"></div>
 			</header>
 		<div class="contenedor-form">
@@ -72,6 +76,7 @@
         	<div class="formulario">
 			<h1><a style="font-family: Calibri">Alta de Libros</h1>
 			<br />
+            <!--Formulario para dar de alta un libro-->
 			<h2>Datos principales</h2>
 			<h4>(*) Campos obligatorios</h4>
 			 <form action="altaLibrosSuper.php" method="post" id="altalibros">
@@ -99,13 +104,14 @@
                 <input type="text" name="Comentario" placeholder="Comentario adicional" maxlength="200" >
                 
                 <select class="contenedor-form" name="Estatus" title="Seleccione Estatus" required>
-                	<option value="">Seleccione Estatus *</option>
+                	<!--Lista de disponibilidad de un libro-->
+                    <option value="">Seleccione Estatus *</option>
                 	<option value="DISPONIBLE">Disponible</option>
                 	<option value="CONSULTA INTERNA">Consulta Interna</option>
                 	<option value="RESERVADO">Reservado</option>
                 </select> <br /> <br />
                 
-                
+                <!--Botones-->
                 <input type="submit" value="Aceptar "> <br /> <br />
                 
                 <input type="submit" value="Cancelar" onclick="location.href='MenuSuperUsuario.php'">

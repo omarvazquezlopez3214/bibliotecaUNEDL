@@ -1,5 +1,7 @@
 <?php
+//Mantiene la sesion iniciada
 	@session_start();
+	//dependiendo la matricula define el tipo de usuario que le dara
     if(!isset($_SESSION["matricula"])) 
     {
         header("Location: log-in.php");
@@ -18,6 +20,7 @@
     }
 ?>
 <!DOCTYPE html>
+<!--el formato de los estilos en CSS-->
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -31,6 +34,7 @@
 	</head>
 	<body>
 		<header>
+			<!--estilos en CSS del Header-->
 				<nav class="menu">
 			  <div class="contenido-menu">
 				<div class="logo">
@@ -43,7 +47,7 @@
 					</div>
 				</div>
 			  </div>
-			
+			<!--Menu de navegacion del administrador-->
 				<ul class="menu-navegacion">
                     <li><a href="MenuAdmin.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -57,20 +61,22 @@
                     <li><a href="prestamos.php">Prestamos</a></li>
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
-                    <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+			 <!--Cintilla debajo del menu de navegacion-->
 			 <div class="cinta"></div>
 			</header>
 			<div class="contenedor-form">
 				<div class="toggle2">
 				</div>
+				<!--Formulario-->
         	    <div class="formulario">
 			 <h1>Prestamos</h1>
 			 <p>Persona y sus libros prestados.</p>
 			 <form action="aceptarPrestamoPersonas.php" method="post">
 			 	<select id="personaReservaLibro" name="personaLibrosEnPrestamo" class="contenedor-form" required>
 			 		<?php
+			 		//Consulta en la BDD los que estan prestados
 			 		echo '<option value="">Seleccione un libro prestado del usuario:</option>';
 			 		include("conexionbdd.php");
 					if($conn->connect_error)
@@ -89,6 +95,7 @@
 						}	
 					}else
 					{
+						//si no lo encuentra manda a esta pagina de error
 						header("Location: noexitoPersonasPrestamo.php");
 					}
 
@@ -97,6 +104,7 @@
 			 		?>
 			 		
 			 	</select>
+			 	<!--Formulario cuando si lo encuentra-->
 			 	<select id="personaReservaLibro" name="personaEstatusEnPrestamo" class="contenedor-form" required>
 			 	<option value="">Selecciona el estatus para la devolucion del libro *</option>
 			 	<option value="DISPONIBLE">Disponible</option>
@@ -104,7 +112,7 @@
 			 	<option value="RESERVADO">Reservado</option>
 			 	<option value="PRESTAMO">Prestamo</option>
 			 	</select>
-                
+                <!--Botones-->
                 <input type="submit" value="Aceptar "> <br /> <br />
                 
                 <input type="button" value="Cancelar" onclick="location.href='prestamos.php'">

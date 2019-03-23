@@ -1,5 +1,7 @@
 <?php
+//Mantiene la sesion iniciada
 	@session_start();
+	//dependiendo la matricula define el tipo de usuario que le dara
     if(!isset($_SESSION["matricula"])) 
     {
         header("Location: log-in.php");
@@ -20,12 +22,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!--Head de la pagina y sus estilos-->
     <meta charset="UTF-8">
     <title>Página reserva libro exitosa</title>
     <link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
 	<header>
+		<!--Header donde se encuentra el logo y los estilos-->
 			<nav class="menu">
 			  <div class="contenido-menu">
 				<div class="logo">
@@ -38,7 +42,7 @@
 					</div>
 				</div>
 			  </div>
-			
+			<!--Menu de navegacion Super usuario--> 
 				<ul class="menu-navegacion">
 					<li><a href="MenuSuperUsuario.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -59,12 +63,13 @@
                     <li><a href="prestamossuper.php">Prestamos</a></li>
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
-                    <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+			 <!--Cintilla debajo del menu de navegacion-->
 			 <div class="cinta"></div>
 			</header>
 	<div class="contenedor-form">
+		<!--Contenido del body-->
 				<div class="registroexitoso">
 				<br />
 				<h3>NO EXISTE EL LIBRO QUE QUIERES CONSULTAR</h3>
@@ -72,6 +77,7 @@
 				<br />
 				<h3>Menu principal.</h3>
 				</div>
+				<!--Boton para menu principal-->
 				<div class="logo">
 				<a href="MenuSuperUsuario.php"><img src="img/casa.png" width="120" height="120" /></a> <!--AQUI VA LA PAGINA DE MENU EN VES DE INDEX.HTML-->
 				</div>
@@ -79,6 +85,7 @@
 				<div class="registroexitoso">
     			<h3>Consultar otro libro</h3>
 				</div>
+				<!--Boton para regresar-->
 				<div class="logo">
 				<a href="ConsultaSuper.php"><img src="img/regresar.png" width="120" height="120" /></a>
 				</div>

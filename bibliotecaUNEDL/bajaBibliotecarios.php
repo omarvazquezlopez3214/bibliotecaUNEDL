@@ -1,5 +1,7 @@
 <?php
+//Mantiene el inicio de sesion 
 	@session_start();
+	//manda a la pagina dependiendo el tipo de usuario
     if(!isset($_SESSION["matricula"])) 
     {
         header("Location: log-in.php");
@@ -20,10 +22,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!--Head de la pagina y sus estilos-->
 		<meta charset="utf-8">
-
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
 		<title>Baja bibliotecarios</title>
 		<meta name="description" content="">
 		<meta name="author" content="Omar">
@@ -31,19 +32,19 @@
 	</head>
 	<body>
 		<header>
+			<!--Header donde se encuentra el logo y los estilos-->
 				<nav class="menu">
 			  <div class="contenido-menu">
 				<div class="logo">
 					<div class="logo-nombre">
 						<img src="img/unedl2.png" alt="" />
-						
 					</div>
 					<div class="icono-menu">
 						<a href="#" id="btn-menu" class="btn-menu"><samp class="fa fa-bars"></samp></a>
 					</div>
 				</div>
 			  </div>
-			
+			<!--Menu de navegacion Super usuario--> 
 				<ul class="menu-navegacion">
 					<li><a href="MenuSuperUsuario.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -64,11 +65,11 @@
                     <li><a href="prestamossuper.php">Prestamos</a></li>
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
-                    <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
 			</header>
 		<?php
+		//Regresa los datos del bibliotecario que se quiere dar de baja
     include("conexionbdd.php");
 	if($conn->connect_error)
 	{
@@ -97,6 +98,7 @@
 			 <h1>Baja de bibliotecarios</h1>
 			 <h4>Datos del bibliotecario para dar de baja.</h4>
 			 <br />
+			 <!--Datos del bibliotecario que se dara de baja-->
 			 <form action="aceptarBajaSuperBibliotecario.php" method="post">
                 <input type="text" name="Id" value="<?php echo $row['id_usuario']; ?>" readonly required>
                 
@@ -113,7 +115,7 @@
                  <input type="text" name="Telefono" value="<?php echo $row['telefono']; ?>" readonly required>
 
                   <input type="text" name="Fecha_registro" value="<?php echo $row['fecha_registro']; ?>" readonly required>
-                
+                <!--Botones-->
                 <input type="submit" value="Aceptar "> <br /> <br />
                 
                 <input type="button" value="Cancelar" onclick="location.href='bajabibliotecario.php'">

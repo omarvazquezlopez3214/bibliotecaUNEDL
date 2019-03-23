@@ -1,4 +1,5 @@
 <?php
+//Mantiene el inicio de sesion y manda a la pagina dependiendo el tipo de usuario
 	@session_start();
 	if(!isset($_SESSION["matricula"])) 
 	{
@@ -15,6 +16,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!--Head de la pagina y sus estilos-->
 		<title>Menu Usuario</title>
 		<link href="css/estilos.css" rel="stylesheet" type="text/css" />
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,
@@ -35,6 +37,7 @@
 	</head>
 
 	<body>
+		<!--Header donde se encuentra el logo y los estilos-->
 			<header>
 				<nav class="menu">
 			  <div class="contenido-menu">
@@ -47,7 +50,7 @@
 					</div>
 				</div>
 			  </div>
-			
+			<!--Menu de navegacion--> 
 				<ul class="menu-navegacion">
                     <li><a href="http://buzon.unedl.edu.mx/indexbzn.html">Contacto</a></li>
                     <li><a href="consulta.php">Consultar libro</a></li>
@@ -56,10 +59,12 @@
                     <li><a href="logout.php">Cerrar Sesión</a></li>
 				</ul>
 			 </nav>
+			 <!--Cintilla debajo del menu de navegacion-->
 			 <div class="cinta"></div>
 			</header>
 			<br />
 <!--Slider --> <!---->
+<!--Slider con las imagenes publicitarias de unedl-->
 		<div class="slider-wrapper theme-mi-slider">
 			<div id="slider" class="nivoSlider">     
 		    	<img src="img/generaciones.jpg" alt="" title="#htmlcaption1" />    
@@ -69,8 +74,10 @@
 			</div>
 		</div><!--Aqui termina el slider-->
 			<br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<!--cintilla azul claro arriba del footer-->
 			<div class="cinta2"></div>
 			<div class="footer">
+				<!--Contenido del Footer-->
 				<p class="texto-footer">
 					<br />
 					<a href="https://www.unedl.edu.mx/portal/planteles.php">Contáctanos en nuestros diferentes planteles</a>

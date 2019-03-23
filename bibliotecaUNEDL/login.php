@@ -1,4 +1,5 @@
 <?php
+//Incluye la conexion a la base de datos y si falla manda un mensaje que fallo la conexion a la base de datos
     include("conexionbdd.php");
 	if($conn->connect_error)
 	{
@@ -7,14 +8,13 @@
 	}
 	$matricula_colaborador = $_POST['mn'];
 	$contrasena = $_POST['pa'];
-	
-	
+	//query donde valida la matricula y la contraseña en la bdd
 	$consultaUsuario = "SELECT * FROM usuarios WHERE matricula = '$matricula_colaborador' AND contrasena = '$contrasena'";
 	$result = $conn ->query($consultaUsuario);
 	if($result -> num_rows > 0)
 	{
 		while($row = mysqli_fetch_array($result))
-		{
+		{//inicia la sesion con las vaariables
 			@session_start();
 			$_SESSION['loggedin'] = true;
 			$_SESSION["nombre"]=$row["nombre"];
@@ -25,8 +25,7 @@
 			$_SESSION["carrera"]=$row["carrera"];
 			$_SESSION["telefono"]=$row["telefono"];
 			$_SESSION["tipousuario"]=$row["tipo_usuario"];
-			
-			
+			//depende el tipo de usuario mandara al menu necesario
 			if($_SESSION["tipousuario"] == 'A' || $_SESSION["tipousuario"] == 'B')
 			{
 				header("Location: MenuUsuario.php");
@@ -38,7 +37,7 @@
 				header("Location: MenuSuperUsuario.php");
 			}
 		}
-	}else
+	}else//si entra aqui es por que no se ingreso correctamente algo
 	{
 		header("Location: noexitoLogIn.php");	
 	}

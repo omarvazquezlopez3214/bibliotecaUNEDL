@@ -1,4 +1,5 @@
 <?php
+//Mantiene el inicio de sesion y manda a la pagina dependiendo el tipo de usuario
 	@session_start();
     if(!isset($_SESSION["matricula"])) 
     {
@@ -16,12 +17,14 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+	<!--Head de la pagina y sus estilos-->
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <title>Libros</title>
     <link rel="stylesheet" href="css/estilos.css">
 	</head>
 	<body>
 		<header>
+			<!--Header donde se encuentra el logo y los estilos-->
 				<nav class="menu">
 			  <div class="contenido-menu">
 				<div class="logo">
@@ -34,7 +37,7 @@
 					</div>
 				</div>
 			  </div>
-			
+			<!--Menu de navegacion--> 
 				<ul class="menu-navegacion">
                     <li><a href="http://buzon.unedl.edu.mx/indexbzn.html">Contacto</a></li>
                     <li><a href="consulta.php">Consultar libro</a></li>
@@ -43,9 +46,10 @@
                     <li><a href="logout.php">Cerrar Sesión</a></li>
 				</ul>
 			 </nav>
+			<!--Cintilla debajo del menu de navegacion-->
 			 <div class="cinta"></div>
 			</header>
-			
+			<!--Div para datos de los libros-->	
 		<div class="contenedor-form">
 			<div class="toggle2">
         	</div>
@@ -56,6 +60,7 @@
 			 <form action="aceptarReservaLibro.php" method="post">
 			 	<select id="librosConsulta" name="consultaLibros" class="contenedor-form" required>
 			 		<option value="">Seleccione un libro de la consulta:</option>
+			 <!--Realiza el Query a la BDD-->		
 			<?php
 
 			    include("conexionbdd.php");
@@ -70,6 +75,8 @@
 				
 				if ($modalidadbusqueda == "Titulo")
 				{
+					//Valida si el libro que fue consultado no esta en la BDD disponible
+					//SI no lo encuentra lo manda a la siguiente pagina consultaNoExitosa.php
 					$validarlibro = "SELECT * FROM libros WHERE titulo LIKE '%".$busqueda."%' ";
 					$result = $conn ->query($validarlibro);
 					if($result-> num_rows > 0)
@@ -82,7 +89,7 @@
 					{
 						header("Location: consultaNoExitosa.php");
 					}
-					
+					//Validacion por autor
 				}elseif ($modalidadbusqueda == "Autor")
 				{
 					$validarlibro = "SELECT * FROM libros WHERE autor_autores LIKE '%".$busqueda."%' ";
@@ -97,6 +104,7 @@
 					{
 						header("Location: consultaNoExitosa.php");
 					}
+					//Validacion por codigo Dewey
 				}elseif ($modalidadbusqueda == "Dewey")
 				{
 					$validarlibro = "SELECT * FROM libros WHERE codigo_dewey LIKE '%".$busqueda."%' ";
@@ -115,7 +123,7 @@
 				mysqli_close($conn);	
 			?>
 			 	</select>
-			 		
+			 	<!--Botones-->
                 <input type="submit" value="Reservar "> <br /> <br />
                 
                 <input type="button" value="Cancelar" onclick="location.href='consulta.php'">

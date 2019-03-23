@@ -1,5 +1,7 @@
 <?php
+//Mantiene la sesion iniciada
 	@session_start();
+	//dependiendo la matricula define el tipo de usuario que le dara
     if(!isset($_SESSION["matricula"])) 
     {
         header("Location: log-in.php");
@@ -18,6 +20,7 @@
     }
 ?>
 <!DOCTYPE html>
+<!--el formato de los estilos en CSS-->
 <html lang="en">
 	<head>
 	<meta charset="UTF-8">
@@ -26,6 +29,7 @@
 	</head>
 	<body>
 		<header>
+			 <!--estilos en CSS del Header-->
 				<nav class="menu">
 			  <div class="contenido-menu">
 				<div class="logo">
@@ -38,7 +42,7 @@
 					</div>
 				</div>
 			  </div>
-			
+			<!--Menu de navegacion del administrador-->
 				<ul class="menu-navegacion">
                     <li><a href="MenuAdmin.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -52,15 +56,16 @@
                     <li><a href="prestamos.php">Prestamos</a></li>
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
-                    <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+			   <!--Cintilla debajo del menu de navegacion-->
 			 <div class="cinta"></div>
 			</header>
 		<div class="contenedor-form">
 			<div class="toggle2">
         	</div>
         	<div class="formulario">
+        		<!--Formulario de los datos de libro consultado-->
 			<h1>Datos del libro y Usuario</h1>
 			<p>Id*CodigoDewey*Titulo-Autor-Editorial-Plantel-Año-Estatus</p>
 			 <form action="#" method="post">
@@ -76,7 +81,8 @@
 				//Recuperar las variables
 				$busqueda=$_GET['busqueda'];
 				$modalidadbusqueda = $_GET['modalidadBusqueda'];
-				
+				//Valida si el libro que fue consultado no esta en la BDD disponible
+				//SI no lo encuentra lo manda a la siguiente pagina consultaNoExitosaAdmin.php
 				if ($modalidadbusqueda == "Titulo")
 				{
 					$validarlibro = "SELECT * FROM libros WHERE titulo LIKE '%".$busqueda."%' ";
@@ -92,7 +98,7 @@
 					{
 						header("Location: consultaNoExitosaAdmin.php");
 					}
-					
+					//Validacion por autor
 				}elseif ($modalidadbusqueda == "Autor")
 				{
 					$validarlibro = "SELECT * FROM libros WHERE autor_autores LIKE '%".$busqueda."%' ";
@@ -107,6 +113,7 @@
 					{
 						header("Location: consultaNoExitosaAdmin.php");
 					}
+					//Validacion por codigo Dewey
 				}elseif ($modalidadbusqueda == "Dewey")
 				{
 					$validarlibro = "SELECT * FROM libros WHERE codigo_dewey LIKE '%".$busqueda."%' ";
@@ -125,7 +132,7 @@
 				mysqli_close($conn);	
 			?>
 			 	</select>
-			 	
+			 	<!--Botones-->
                 <input type="button" value="Regresar " onclick="location.href = 'ConsultaAdmin.php'">
                 
                 <input type="button" value="Cancelar" onclick="location.href='ConsultaAdmin.php'">
