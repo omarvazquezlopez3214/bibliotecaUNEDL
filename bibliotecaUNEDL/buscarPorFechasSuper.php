@@ -95,10 +95,13 @@
 					$startDate = $_POST['start_date'];
 					$endDate = $_POST['end_date'];
 
-					$query = "SELECT * FROM reservalibros WHERE DATE(fecha_reservacion) BETWEEN '$startDate' AND '$startDate'";
+					$fecha = "SELECT * FROM reservalibros WHERE DATE(fecha_reservacion) BETWEEN '$startDate' AND '$startDate'";
+                    $re = $conn->query($fecha);
+                    $fil = mysqli_num_rows($re);
                     //se regresan los datos del libro y del usuario si lo encuentra en la BDD
-					if($resultado = $conn->query($query))
+					if($fil > 0)
 					{
+
 						while($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC))
 						{
 						echo '<option value ="'.$row[id_libro].'">'.$row[titulo].' - '.$row[autor].' - '.$row[plantel].' - '.$row[nombre].' - '.$row[apellidos].' - '.$row[correo_electronico].' - '.$row[matricula].' - '.$row[carrera].' - '.$row[telefono].' - '.$row[fecha_reservacion].'</option>';

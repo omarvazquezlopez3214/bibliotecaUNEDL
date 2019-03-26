@@ -94,27 +94,29 @@
 	mysqli_close($conn);
 ?>
 <div class="contenedor-form">
-			 <div>
+			 <div class="toggle2">
+        	 </div>
+			 <div class="formulario">
 			 <h1>Baja de bibliotecarios</h1>
 			 <h4>Datos del bibliotecario para dar de baja.</h4>
 			 <br />
 			 <!--Datos del bibliotecario que se dara de baja-->
 			 <form action="aceptarBajaSuperBibliotecario.php" method="post">
-                <input type="text" name="Id" value="<?php echo $row['id_usuario']; ?>" readonly required>
+                <input type="text" name="Id" value= "<?php echo $row['id_usuario']; ?>" readonly required title = "Identificador">
                 
-                <input type="text" name="Nombre" value="<?php echo $row['nombre']; ?>" readonly required>
+                <input type="text" name="Nombre" value="<?php echo $row['nombre']; ?>" readonly required title = "Nombre">
                 
-                <input type="text" name="Apellidos" value="<?php echo $row['apellidos']; ?>" readonly required>
+                <input type="text" name="Apellidos" value="<?php echo $row['apellidos']; ?>" readonly required title = "Apellidos">
 
-                <input type="text" name="Correo_electronico" value="<?php echo $row['correo_electronico']; ?>" readonly required>
+                <input type="text" name="Correo_electronico" value="<?php echo $row['correo_electronico']; ?>" readonly required title = "Correo electrónico">
 
-                <input type="text" name="Matricula" value="<?php echo $row['matricula']; ?>" readonly required>
+                <input type="text" name="Matricula" value="<?php echo $row['matricula']; ?>" readonly required title = "Matrícula">
 
-                <input type="text" name="Carrera" value="<?php echo $row['carrera']; ?>" readonly required>
+                <input type="text" name="Carrera" value="<?php echo $row['carrera']; ?>" readonly required title = "Puesto">
 
-                 <input type="text" name="Telefono" value="<?php echo $row['telefono']; ?>" readonly required>
+                 <input type="text" name="Telefono" value="<?php echo $row['telefono']; ?>" readonly required title = "Telefono" >
 
-                  <input type="text" name="Fecha_registro" value="<?php echo $row['fecha_registro']; ?>" readonly required>
+                  <input type="text" name="Fecha_registro" value="<?php echo $row['fecha_registro']; ?>" readonly required title = "Fecha de Registro">
                 <!--Botones-->
                 <input type="submit" value="Aceptar "> <br /> <br />
                 

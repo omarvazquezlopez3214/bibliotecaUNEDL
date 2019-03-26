@@ -87,7 +87,9 @@
 					//Recuperar las variables
 					$matricula=$_GET['matricula'];
 					$validarmatricula = "SELECT * FROM prestamoslibros WHERE matricula  = '".$matricula."' ";
-					if($resultado = $conn->query($validarmatricula))
+					$resultado = $conn->query($validarmatricula);
+					$fil = mysqli_num_rows($resultado);
+					if($fil > 0)
 					{
 						while($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC))
 						{

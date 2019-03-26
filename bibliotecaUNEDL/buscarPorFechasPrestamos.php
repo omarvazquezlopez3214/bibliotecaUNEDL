@@ -80,9 +80,11 @@
 					$startDate = $_POST['start_date'];
 					$endDate = $_POST['end_date'];
 
-					$query = "SELECT * FROM prestamoslibros WHERE DATE(fecha_prestamo) BETWEEN '$startDate' AND '$startDate'";
+					$fecha = "SELECT * FROM reservalibros WHERE DATE(fecha_reservacion) BETWEEN '$startDate' AND '$startDate'";
+                    $re = $conn->query($fecha);
+                    $fil = mysqli_num_rows($re);
                     //Si se encuentra en la BDD regresa la informacion del libro y del usuario
-					if($resultado = $conn->query($query))
+					if($fil > 0)
 					{
 						while($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC))
 						{

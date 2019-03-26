@@ -78,7 +78,7 @@
                 <input id="usuario" type="text" name="matricula" placeholder="Escriba la matricula del alumno *" required>
                 <div> <!--botones para hacer la busqueda-->
                 <input type="submit" value="Buscar por persona" > <br /> <br />
-                <input type="button" value="Buscar todos" onclick="location.href = 'DatosDeLibrosReservadosSuper.php'">
+                <input type="button" value="Buscar por fechas" onclick="location.href = 'DatosDeLibrosReservadosSuper.php'">
                 <input type="button" value="Cancelar" onclick="location.href = 'MenuSuperUsuario.php'">
                 </div>
               </form>

@@ -83,7 +83,9 @@
 	$id=$_GET['Id'];
 	
 	$validarid = "SELECT * FROM libros WHERE id = '".$id."' ";
-	if($resultado = $conn->query($validarid))
+	$resultado = $conn->query($validarid);
+	$fil = mysqli_num_rows($resultado);
+	if($fil > 0)
 	{
 		$row = mysqli_fetch_array($resultado, MYSQLI_ASSOC);	
 	}else
@@ -103,17 +105,17 @@
 			 <br />
 			 <!--Muestra los datos recuperados de la BDD-->
 			 <form action="aceptarBajaSuper.php" method="post">
-                <input type="text" name="Id" value="<?php echo $row['id']; ?>" readonly required>
+                <input type="text" name="Id" value="<?php echo $row['id']; ?>" readonly required title = "Identificador">
                 
-                <input type="text" name="Titulo" value="<?php echo $row['titulo']; ?>" readonly required>
+                <input type="text" name="Titulo" value="<?php echo $row['titulo']; ?>" readonly required title = "Título del libro">
                 
-                <input type="text" name="Autor" value="<?php echo $row['autor_autores']; ?>" readonly required>
+                <input type="text" name="Autor" value="<?php echo $row['autor_autores']; ?>" readonly required title = "Autor">
 
-                <input type="text" name="Editorial" value="<?php echo $row['editorial']; ?>" readonly required>
+                <input type="text" name="Editorial" value="<?php echo $row['editorial']; ?>" readonly required title = "Editorial">
 
-                <input type="text" name="Ano" value="<?php echo $row['ano']; ?>" readonly required>
+                <input type="text" name="Ano" value="<?php echo $row['ano']; ?>" readonly required title = "Año de edición">
 
-                <input type="text" name="Plantel" value="<?php echo $row['plantel']; ?>" readonly required>
+                <input type="text" name="Plantel" value="<?php echo $row['plantel']; ?>" readonly required title = "Plantel">
                 <!--Botones-->
                 <input type="submit" value="Aceptar "> <br /> <br />
                 

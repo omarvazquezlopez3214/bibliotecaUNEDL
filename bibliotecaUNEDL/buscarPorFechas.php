@@ -93,9 +93,11 @@
 					$startDate = $_POST['start_date'];
 					$endDate = $_POST['end_date'];
 
-					$query = "SELECT * FROM reservalibros WHERE DATE(fecha_reservacion) BETWEEN '$startDate' AND '$startDate'";
+					$fecha = "SELECT * FROM reservalibros WHERE DATE(fecha_reservacion) BETWEEN '$startDate' AND '$startDate'";
+                    $re = $conn->query($fecha);
+					$fil = mysqli_num_rows($re);
                     //manda el resultado del libro despues de ejecutar el query
-					if($resultado = $conn->query($query))
+					if($fil > 0)
 					{
 						while($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC))
 						{
