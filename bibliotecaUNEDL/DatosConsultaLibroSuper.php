@@ -98,7 +98,7 @@
 					{
 						while($row = mysqli_fetch_array($result))
 						{//Trai los datos del libro
-							echo '<option value ="'.$row[id].'">'.$row[id].'*'.$row[codigo_dewey].' * '.$row[titulo].' - '.$row[autor_autores].' - '.$row[editorial].' - '.$row[plantel].' - '.$row[ano].' - '.$row[estatus].'</option>';
+							echo '<option value ="'.$row[id].'">'.$row[id].'*'.utf8_encode($row[codigo_dewey]).' * '.utf8_encode($row[titulo]).' - '.utf8_encode($row[autor_autores]).' - '.utf8_encode($row[editorial]).' - '.utf8_encode($row[plantel]).' - '.$row[ano].' - '.$row[estatus].'</option>';
 							
 						}	
 					}else
@@ -114,7 +114,7 @@
 					{
 						while($row = mysqli_fetch_array($result))
 						{
-							echo '<option value ="'.$row[id].'">'.$row[id].'*'.$row[codigo_dewey].' * '.$row[titulo].' - '.$row[autor_autores].' - '.$row[editorial].' - '.$row[plantel].' - '.$row[ano].' - '.$row[estatus].'</option>';
+							echo '<option value ="'.$row[id].'">'.$row[id].'*'.utf8_encode($row[codigo_dewey]).' * '.utf8_encode($row[titulo]).' - '.utf8_encode($row[autor_autores]).' - '.utf8_encode($row[editorial]).' - '.utf8_encode($row[plantel]).' - '.$row[ano].' - '.$row[estatus].'</option>';
 						}
 					}else
 					{
@@ -128,7 +128,7 @@
 					{
 						while($row = mysqli_fetch_array($result))
 						{
-							echo '<option value ="'.$row[id].'">'.$row[id].'*'.$row[codigo_dewey].' * '.$row[titulo].' - '.$row[autor_autores].' - '.$row[editorial].' - '.$row[plantel].' - '.$row[ano].' - '.$row[estatus].'</option>';
+							echo '<option value ="'.$row[id].'">'.$row[id].'*'.utf8_encode($row[codigo_dewey]).' * '.utf8_encode($row[titulo]).' - '.utf8_encode($row[autor_autores]).' - '.utf8_encode($row[editorial]).' - '.utf8_encode($row[plantel]).' - '.$row[ano].' - '.$row[estatus].'</option>';
 						}	
 					}else
 					{

@@ -1,4 +1,5 @@
 <?php
+//incluye la conexion a la BDD
     include("conexionbdd.php");
 	if($conn->connect_error)
 	{
@@ -13,7 +14,7 @@
 	$matri=$_POST['matricula'];
 	$licenciatura=$_POST['carrera'];
 	$telefono=$_POST['telefono'];
-
+//validacion del correo en BDD
 	$validarcorreo = "SELECT correo_electronico FROM usuarios WHERE correo_electronico = '".$email."'";
 	$re = $conn->query($validarcorreo);
 	$fil = mysqli_num_rows($re);
@@ -21,7 +22,7 @@
 	{
 		header("Location: noexitoCorreoElectronico.php");
 	}else{
-
+//valida la matricula en BDD
 	$validarmatricula = "SELECT matricula FROM usuarios WHERE matricula = '".$matri."' ";
 	$result = $conn->query($validarmatricula);
 	$fila = mysqli_num_rows($result);
@@ -31,7 +32,7 @@
 	}else if ($fila == 1 && preg_match("/^([B][I])[0-9]{3}$/", $matri)) {
 		header("Location: noexitoMatriculaSuper.php");
 	}else{
-	
+	//checa el tipo de usuario
 	if(preg_match("/^([0-9]{2}[A|B][L])[0-9]{7}$/", $matri))
 	{
 		$tipousuario='A'; //Alumno 	
@@ -48,7 +49,7 @@
 	}else if ($tipousuario == 'C') {
 		$licenciatura = "Bibliotecario";
 	}
-
+//inserta en la BDD
 	$sql = "INSERT INTO usuarios(nombre, apellidos, contrasena, correo_electronico, matricula, carrera, telefono , tipo_usuario, fecha_registro) 
 	VALUES ('".$name."','".$apellidos."','".$pass."','".$email."','".$matri."','".$licenciatura."','".$telefono."','".$tipousuario."',now())";
 	$conn->query ($sql);
@@ -61,7 +62,7 @@
 		header("Location:exitoreg.html");
 	}
 	else
-	{
+	{ //si falla manda error
 		echo "<br /> Error : ". $sql . "<br />". $conn->error."<br />";
 				}
 			

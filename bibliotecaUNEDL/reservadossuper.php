@@ -1,4 +1,5 @@
 <?php
+//Mantiene el inicio de sesion y manda a la pagina dependiendo el tipo de usuario
     @session_start();
     if(!isset($_SESSION["matricula"])) 
     {
@@ -18,14 +19,13 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <head> <!--Head de la pagina y sus estilos-->
     <meta charset="UTF-8">
     <title>Personas con libros reservados</title>
     <link rel="stylesheet" href="css/estilos.css">
-    
     </head>
         <body>
-            <header>
+            <header>  <!--Header donde se encuentra el logo y los estilos-->
                 <nav class="menu">
               <div class="contenido-menu">
                 <div class="logo">
@@ -38,7 +38,7 @@
                     </div>
                 </div>
               </div>
-            
+            <!--Menu de navegacion Super Usuario--> 
                 <ul class="menu-navegacion">
                     <li><a href="MenuSuperUsuario.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -60,7 +60,7 @@
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
                 </ul>
-             </nav>
+             </nav> <!--Cintilla debajo del menu de navegacion-->
              <div class="cinta"></div>
             </header>
             <br /><br />
@@ -72,9 +72,11 @@
             <h1>Reservaciones de libros</h1>
             <p>Introduce la matricula del alumno o colaborador.</p>
             <br />
+            <!--Formulario-->
              <form action="DatosPersonasReservadasSuper.php" method="get">
+                <!--aqui se ingresa la matricula del usuario-->
                 <input id="usuario" type="text" name="matricula" placeholder="Escriba la matricula del alumno *" required>
-                <div>
+                <div> <!--botones para hacer la busqueda-->
                 <input type="submit" value="Buscar por persona" > <br /> <br />
                 <input type="button" value="Buscar todos" onclick="location.href = 'DatosDeLibrosReservadosSuper.php'">
                 <input type="button" value="Cancelar" onclick="location.href = 'MenuSuperUsuario.php'">

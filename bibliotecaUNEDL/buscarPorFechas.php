@@ -1,5 +1,6 @@
 
 <?php
+//Mantiene el inicio de sesion y manda a la pagina dependiendo el tipo de usuario
 	@session_start();
     if(!isset($_SESSION["matricula"])) 
     {
@@ -20,7 +21,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+	<head> <!--Head de la pagina y sus estilos-->
 		<meta charset="utf-8">
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -37,7 +38,7 @@
     	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<header>
+		<header> <!--Header donde se encuentra el logo y los estilos-->
 			<nav class="menu">
 				<div class="contenido-menu">
 					<div class="logo">
@@ -50,7 +51,7 @@
 						</div>
 					</div>
 				</div>
-			
+			<!--Menu de navegacion Admin--> 
 				<ul class="menu-navegacion">
                     <li><a href="MenuAdmin.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -65,13 +66,14 @@
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
 				</ul>
-			 </nav>
+			 </nav> <!--Cintilla debajo del menu de navegacion-->
 			 <div class="cinta"></div>
 		</header>
 
 		<div class="contenedor-form">
             <div class="toggle2">
                 </div>
+                <!--Formulario con la informacion-->
             <div class="formulario">
 				<br />
 				<h1>Reservaciones de libros</h1>
@@ -87,12 +89,12 @@
 						die("<br /> Fallo el intento de conexión a la base de datos: "
 					 								.$conn->connect_error . "<br />");
 					}
-
+                    //Query donde hace la busqueda por fecha
 					$startDate = $_POST['start_date'];
 					$endDate = $_POST['end_date'];
 
 					$query = "SELECT * FROM reservalibros WHERE DATE(fecha_reservacion) BETWEEN '$startDate' AND '$startDate'";
-
+                    //manda el resultado del libro despues de ejecutar el query
 					if($resultado = $conn->query($query))
 					{
 						while($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC))
@@ -100,7 +102,7 @@
 						echo '<option value ="'.$row[id_libro].'">'.$row[titulo].' - '.$row[autor].' - '.$row[plantel].' - '.$row[nombre].' - '.$row[apellidos].' - '.$row[correo_electronico].' - '.$row[matricula].' - '.$row[carrera].' - '.$row[telefono].' - '.$row[fecha_reservacion].'</option>';
 						}	
 					}else
-					{
+					{ //si falla manda error
 						header("noexitoBusquedaFecha.php");
 					}
 
@@ -109,6 +111,7 @@
 			 		?>
       			 	</select>
            </div>
+           <!--Botones-->
                 <input type="submit" value="Aceptar "> <br /> <br />
                 
                 <input type="button" value="Cancelar" onclick="location.href='reservados.php'">

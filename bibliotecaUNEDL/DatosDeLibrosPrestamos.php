@@ -1,4 +1,5 @@
-<?php
+<?php 
+//Mantiene el inicio de sesion y manda a la pagina dependiendo el tipo de usuario
 	@session_start();
     if(!isset($_SESSION["matricula"])) 
     {
@@ -19,11 +20,9 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+	<head> <!--Head de la pagina y sus estilos-->
 		<meta charset="utf-8">
-
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
 		<title>Personas con libros Prestamos</title>
 		<meta name="description" content="">
 		<meta name="author" content="Omar">
@@ -36,7 +35,7 @@
     	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<header>
+		<header> <!--Header donde se encuentra el logo y los estilos-->
 			<nav class="menu">
 				<div class="contenido-menu">
 					<div class="logo">
@@ -49,7 +48,7 @@
 						</div>
 					</div>
 				</div>
-			
+			<!--Menu de navegacion Admin--> 
 				<ul class="menu-navegacion">
                     <li><a href="MenuAdmin.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -64,7 +63,7 @@
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
 				</ul>
-			 </nav>
+			 </nav> <!--Cintilla debajo del menu de navegacion-->
 			 <div class="cinta"></div>
 		</header>
 		<div class="contenedor-form">
@@ -74,12 +73,14 @@
 				<br />
 				<h1>Prestamos de libros</h1>
    			<br />
+            <!--Formulario-->
     		<form action="buscarPorFechasPrestamos.php" method="post">
                <h3>Fecha Inicio</h3>
+               <!--Aqui se ingresan las fechas para la busqueda-->
                <input type="date" name="start_date" id="start_date" required title="Selecciona una fecha." class="form-control" /><br />
                <h3>Fecha Fin</h3>
                <input type="date" name="end_date" id="end_date" required title="Selecciona una fecha." class="form-control" /><br />
-               
+               <!--Botones-->
             <input type="submit" name="search" id="search" value="Buscar" class="btn btn-info active"/><br /><br />
             <input type="button" value="Cancelar" class="btn btn-info active" onclick="location.href = 'prestamos.php'"> 
             

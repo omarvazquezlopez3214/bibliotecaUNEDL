@@ -1,4 +1,5 @@
 <?php
+//Mantiene el inicio de sesion y manda a la pagina dependiendo el tipo de usuario
 	@session_start();
     if(!isset($_SESSION["matricula"])) 
     {
@@ -20,10 +21,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+        <!--Head de la pagina y sus estilos-->
 		<meta charset="utf-8">
-
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
 		<title>Personas con libros reservados</title>
 		<meta name="description" content="">
 		<meta name="author" content="Omar">
@@ -37,6 +37,7 @@
 	</head>
 	<body>
 		<header>
+            <!--Header donde se encuentra el logo y los estilos-->
 			<nav class="menu">
 				<div class="contenido-menu">
 					<div class="logo">
@@ -49,7 +50,7 @@
 						</div>
 					</div>
 				</div>
-			
+			<!--Menu de navegacion Admin--> 
 				<ul class="menu-navegacion">
                     <li><a href="MenuAdmin.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -65,21 +66,24 @@
                     <li><a href="logout.php">Cerrar sesion</a></li>
 				</ul>
 			 </nav>
+             <!--Cintilla debajo del menu de navegacion-->
 			 <div class="cinta"></div>
 		</header>
 		<div class="contenedor-form">
             <div class="toggle2">
                 </div>
+                <!--Formulario-->
             <div class="formulario">
 				<br />
 				<h1>Reservaciones de libros</h1>
    			<br />
+            <!--Formulario para hacer la estimacion del tiempo que se ha prestado el libro-->
     		<form action="buscarPorFechas.php" method="post">
                <h3>Fecha Inicio</h3>
                <input type="date" name="start_date" id="start_date" required title="Selecciona una fecha." class="form-control" /><br />
                <h3>Fecha Fin</h3>
                <input type="date" name="end_date" id="end_date" required title="Selecciona una fecha." class="form-control" /><br />
-               
+               <!--Botones-->
             <input type="submit" name="search" id="search" value="Buscar" class="btn btn-info active"/><br /><br />
             <input type="button" value="Cancelar" class="btn btn-info active" onclick="location.href = 'reservados.php'"> 
             

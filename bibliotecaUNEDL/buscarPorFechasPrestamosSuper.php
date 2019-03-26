@@ -1,4 +1,5 @@
 <?php
+//Mantiene el inicio de sesion y manda a la pagina dependiendo el tipo de usuario
     @session_start();
     if(!isset($_SESSION["matricula"])) 
     {
@@ -18,18 +19,16 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+	<head> <!--Head de la pagina y sus estilos-->
 		<meta charset="utf-8">
-
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
 		<title>Personas con libros prestados</title>
 		<meta name="description" content="">
 		<meta name="author" content="Omar">
 		<link href="css/estilos.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
-		<header>
+		<header> <!--Header donde se encuentra el logo y los estilos-->
 				<nav class="menu">
 			  <div class="contenido-menu">
 				<div class="logo">
@@ -42,7 +41,7 @@
 					</div>
 				</div>
 			  </div>
-			
+			<!--Menu de navegacion Super Usuario-->
 				<ul class="menu-navegacion">
                     <li><a href="MenuSuperUsuario.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
@@ -64,7 +63,7 @@
                     <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
                 </ul>
-			 </nav>
+			 </nav> <!--Cintilla debajo del menu de navegacion-->
 			 <div class="cinta"></div>
 			</header>
 			<div class="contenedor-form">
@@ -83,12 +82,12 @@
 						die("<br /> Fallo el intento de conexión a la base de datos: "
 					 								.$conn->connect_error . "<br />");
 					}
-
+                    //Query para hacer la busqueda en la BDD dependiendo la fecha ingresada
 					$startDate = $_POST['start_date'];
 					$endDate = $_POST['end_date'];
 
 					$query = "SELECT * FROM prestamoslibros WHERE DATE(fecha_prestamo) BETWEEN '$startDate' AND '$startDate'";
-
+                    //Regresa los datos del libro y el usuario
 					if($resultado = $conn->query($query))
 					{
 						while($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC))
@@ -96,7 +95,7 @@
 						echo '<option value ="'.$row[id_libro].'">'.$row[titulo].' - '.$row[autor].' - '.$row[plantel].' - '.$row[ano].' - '.$row[nombre].' - '.$row[apellidos].' - '.$row[correo_electronico].' - '.$row[matricula].' - '.$row[carrera].' - '.$row[telefono].' - '.$row[fecha_prestamo].'</option>';
 						}	
 					}else
-					{
+					{ // si falla manda a no exito
 						header("noexitoBusquedaFechaPrestamosSuper.php");
 					}
 
@@ -105,6 +104,7 @@
 			 		?>
 			 		
 			 	</select>
+			 	<!--Formulario de estatus del libro-->
 			 	<select id="personaReservaLibro" name="personaEstatusEnPrestamo" class="contenedor-form" required>
 			 	<option value="">Selecciona el estatus para la devolucion del libro *</option>
 			 	<option value="DISPONIBLE">Disponible</option>
@@ -112,7 +112,7 @@
 			 	<option value="RESERVADO">Reservado</option>
 			 	<option value="PRESTAMO">Prestamo</option>
 			 	</select>
-                
+                <!--Botones-->
                 <input type="submit" value="Aceptar "> <br /> <br />
                 
                 <input type="button" value="Cancelar" onclick="location.href='prestamossuper.php'">

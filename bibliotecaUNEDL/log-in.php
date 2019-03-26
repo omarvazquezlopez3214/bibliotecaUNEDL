@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
+<head> <!--Head de la pagina y sus estilos-->
     <meta charset="UTF-8">
     <meta http-equiv="Expires" content="0" >
     <title>Login Biblioteca UNEDL</title>
@@ -11,7 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<header>
+	<header> <!--Header donde se encuentra el logo y los estilos-->
                 <nav class="menu">
               <div class="contenido-menu">
                 <div class="logo">
@@ -23,22 +22,22 @@
                     </div>
                 </div>
               </div>
-            
+            <!--Menu de navegacion--> 
                 <ul class="menu-navegacion">
                     <li><a href="http://buzon.unedl.edu.mx/indexbzn.html">Contacto</a></li>
                     <li><a href="MenuPrincipal.php">Inicio</a></li>
                     <li><a href="log-in.php">Inicia Sesión o Registrate</a></li>
                 </ul>
-             </nav>
-             <div class="cinta">
-                
+             </nav> <!--Cintilla debajo del menu de navegacion-->
+             <div class="cinta"> 
             </div>
             </header>
+            <!--Formulario para crear cuenta-->
     <div class="contenedor-form">
         <div class="toggle">
             <span> Crear Cuenta</span>
         </div>
-        
+        <!---->
         <div id="logi" class="formulario">
             <h2>Inicia Sesión</h2>
             <form action="login.php" method="post">
@@ -48,7 +47,7 @@
                 <input type="submit" value="Cancelar" onclick="location.href= 'MenuPrincipal.html'">
             </form>
         </div>
-        
+        <!--Formulario para llenar con los datos requeridos-->
         <div class="formulario">
             <h2>Crea tu Cuenta</h2>
             <h4>Pasar cursor encima del campo 
@@ -74,6 +73,7 @@
                 <div id="resultado"></div>
 
                 <select id="carre" style="display: none" class="contenedor-form" name="carrera" title="Selecciona una carrera" required>
+                    <!--Los distintos programas academicos que tiene la universidad-->
                 	<option value="">Seleccionar Programa Académico *</option>
                 	<option value="Nutricion">Nutricion</option>
                 	<option value="Psicologia">Psicologia</option>
@@ -95,10 +95,12 @@
                 	
                 	<input type="tel" name="telefono" placeholder="Teléfono *"
                 pattern="[0-9]{10}" required>
+                <!--Botones-->
                 	<input type="submit" value="Registrarse"> <br /> <br />
                 	<input type="submit" value="Cancelar" onclick="location.href='log-in.php'">
                     </form>
         </div>
+        <!-- formulario si se olvida la contraseña-->
         <div id="olvide-contra" class="reset-password">
             ¿Olvide mi Contraseña?
         </div>
@@ -107,7 +109,8 @@
         	<form id="recuperarPassword" action="recuperarContrasena.php" method="post">
         		<input type="email" name= "correo" placeholder="Correo Electronico *" required>
         		<input type="text" name= "matricula" placeholder="Matricula o Numero de colaborador *" required>
-        		<input type="submit" value="Enviar">
+        		<!--boton-->
+                <input type="submit" value="Enviar">
         	</form>
         </div>
     </div>
