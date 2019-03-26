@@ -11,8 +11,8 @@ function conecarbd()
 	
 	//Crear conexion
 	$conxn = new mysqli($servername ,$username, $password ,$dbname);
+	$acentos = $conxn->query("SET NAMES 'utf8'");
 	return $conxn;
-	$acentos = $db->query("SET NAMES 'utf8'");
 }
 
 //Llamar a la funcion para Obtener la conexion a la BDD
