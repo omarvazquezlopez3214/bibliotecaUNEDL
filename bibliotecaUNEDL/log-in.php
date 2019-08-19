@@ -44,7 +44,7 @@
                 <input type="text" name="mn" placeholder="Matrícula o Número de colaborador" required>
                 <input type="password" name="pa" placeholder="Contraseña" required>
                 <input type="submit" value="Iniciar Sesión"> <br /> <br />
-                <input type="submit" value="Cancelar" onclick="location.href= 'MenuPrincipal.html'">
+                <input type="submit" value="Cancelar" onclick="location.href= 'MenuPrincipal.php'">
             </form>
         </div>
         <!--Formulario para llenar con los datos requeridos-->
