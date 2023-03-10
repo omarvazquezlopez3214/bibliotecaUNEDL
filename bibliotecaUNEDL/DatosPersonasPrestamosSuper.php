@@ -95,6 +95,7 @@
 					$resultado = $conn->query($validarmatricula);
 					$fil = mysqli_num_rows($resultado);
 					if($fil > 0)
+					{
 						while($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC))
 						{
 							//Variables del libro y del usuario
