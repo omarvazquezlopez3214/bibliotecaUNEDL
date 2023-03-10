@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!--Head de la pagina y sus estilos-->
 	<meta charset="UTF-8">
 	<meta http-equiv="Expires" content="0" >
     <title>Cambiar Contraseña</title>
     <link rel="stylesheet" href="css/estilos.css" />
-	<link rel="stylesheet" href="css/estilos2.css" />
 	</head>
 		<body>
 		<div class="contenedor-form">
@@ -13,19 +13,20 @@
              <span></span>
         	 </div>
 			 <div class="formulario">
-			 <h1>Cambiar Contraseña</h1>
+			 <h1><a style="font-family: Calibri">Cambiar Contraseña</h1>
 			 <h4>(*) Campos obligatorios</h4>
 			 <br />
+			 <!--Formulario-->
 			 <form action="cambiarContrasena.php" method="post">
 			 	
-			 	<input type="text" name="usuario" placeholder="Usuario *" required>
+			 	<input type="text" name="matricula" placeholder="Matricula *" required>
                 
                 <input type="password" name="newPassword" placeholder="Contraseña Nueva *" 
                 maxlength="50" required pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" 
                 title="Una contraseña válida es un conjunto de caracteres, donde cada uno consiste de
                 una letra mayúscula o minúscula, o un dígito. La contraseña debe empezar con una letra y
                 contener al menos un dígito.">
-                
+                <!--Boton-->
                 <input type="submit" value="Aceptar "> <br /> <br />
                 
               </form>

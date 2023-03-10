@@ -11,6 +11,7 @@ function conecarbd()
 	
 	//Crear conexion
 	$conxn = new mysqli($servername ,$username, $password ,$dbname);
+	$acentos = $conxn->query("SET NAMES 'utf8'");
 	return $conxn;
 }
 

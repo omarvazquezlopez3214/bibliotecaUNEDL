@@ -1,9 +1,21 @@
 <?php
 	@session_start();
-	if(!isset($_SESSION["usuario"])) 
-	{
-		header("Location: log-in.php");
-	}
+    if(!isset($_SESSION["matricula"])) 
+    {
+        header("Location: log-in.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'A') 
+    {
+        header("Location: MenuUsuario.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'B') 
+    {
+        header("Location: MenuUsuario.php");
+    }
+    else if(isset($_SESSION["matricula"]) && $_SESSION["tipousuario"] == 'D') 
+    {
+        header("Location: MenuSuperUsuario.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +28,6 @@
 		<meta name="description" content="">
 		<meta name="author" content="Omar">
 		<link href="css/estilos.css" rel="stylesheet" type="text/css" />
-		<link href="css/estilos2.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 		<header>
@@ -24,8 +35,8 @@
 			  <div class="contenido-menu">
 				<div class="logo">
 					<div class="logo-nombre">
-						<img src="img/unedl.png" alt="" />
-						<a href="MenuAdmin.php" >BIBLIOTECA </a>
+						<img src="img/unedl2.png" alt="" />
+						<a href="MenuAdmin.php" ></a>
 					</div>
 					<div class="icono-menu">
 						<a href="#" id="btn-menu" class="btn-menu"><samp class="fa fa-bars"></samp></a>
@@ -34,6 +45,7 @@
 			  </div>
 			
 				<ul class="menu-navegacion">
+                    <li><a href="MenuAdmin.php">Inicio</a></li>
                     <li><a href="#">Libros</a>
                     	<ul class="submenu">
                     		<li><a href="altalibro.php">Dar de alta</a></li>
@@ -42,17 +54,20 @@
                     </li>
                     <li><a href="ConsultaAdmin.php">Consultar Libro</a></li>
                     <li><a href="reservados.php">Reservados</a></li>
-                    <li><a><?php echo $_SESSION["usuario"]; ?></a></li>
+                    <li><a href="prestamos.php">Prestamos</a></li>
+                    <li><a><?php echo $_SESSION["nombre"]; ?></a></li>
                     <li><a href="logout.php">Cerrar sesion</a></li>
                     <li><a class="face" href=""><img src="img/ico-directorio-3.png" alt="" /></a></li>
 				</ul>
 			 </nav>
+			 <div class="cinta"></div>
 			</header>
 			<div class="contenedor-form">
-			 <div>
-			 <h1>Prestamos</h1>
-			 <h4>Persona y sus libros reservados.</h4>
-			 <br />
+				<div class="toggle2">
+				</div>
+			 <div class="formulario">
+			 <h1>Reservados</h1>
+			 <p>Persona y sus libros reservados.</p>
 			 <form action="aceptarReservaPersonas.php" method="post">
 			 	<select id="personaReservaLibro" name="personaLibrosEnReserva" class="contenedor-form" required>
 			 		<?php
@@ -64,12 +79,12 @@
 					 								.$conn->connect_error . "<br />");
 					}
 					//Recuperar las variables
-					$validarusuario = "SELECT * FROM reservalibros";
-					if($resultado = $conn->query($validarusuario))
+					$validarmatricula = "SELECT * FROM reservalibros";
+					if($resultado = $conn->query($validarmatricula))
 					{
 						while($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC))
 						{
-						echo '<option value ="'.$row[id_libro].'">'.$row[titulo].' - '.$row[autor].' - '.$row[editorial].' - '.$row[ano].' - '.$row[usuario].' - '.$row[nombre_completo].' - '.$row[correo_electronico].' - '.$row[matricula].' - '.$row[carrera].' - '.$row[telefono].' - '.$row[fecha_reservacion].'</option>';
+						echo '<option value ="'.$row[id_libro].'">'.$row[titulo].' - '.$row[autor].' - '.$row[plantel].' - '.$row[nombre].' - '.$row[apellidos].' - '.$row[correo_electronico].' - '.$row[matricula].' - '.$row[carrera].' - '.$row[telefono].' - '.$row[fecha_reservacion].'</option>';
 						}	
 					}else
 					{

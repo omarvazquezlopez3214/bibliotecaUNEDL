@@ -1,5 +1,7 @@
 <?php
+//destruye la sesion que esta iniciada
 	@session_start();
 	session_destroy();
-	header("Location: MenuPrincipal.html");
+	//Re direcciona al menu principal
+	header("Location: MenuPrincipal.php");
 ?>

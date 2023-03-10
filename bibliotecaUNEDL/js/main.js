@@ -16,31 +16,70 @@ $('.reset-password').click(function(){
     }, "slow");
 });
 
-$('.profesor').click(function(){
+$('.bibliotecario').click(function(){
   var matricula = document.getElementById("matri").value;
-  var expre = /^([0-9]{2}[A|B][L])[0-9]{7}$/;
-  var expres = /^([0-9]){3,5}$/;
+  var expre = /^([B][I])[0-9]{3}$/;
   if(expre.test(matricula))
   {
-  	document.getElementById("carre").style.display = "block";
-  	document.getElementById("maestro").style.display = "none";
-  	document.getElementById("noexiste").style.display = "none";
-  	$('#carre').prop("required", true);
-  }else if(expres.test(matricula))
-  {
-  	$('#carre').removeAttr("required");
-  	document.getElementById("carre").style.display = "none";
-  	document.getElementById("maestro").style.display = "block";
-  	document.getElementById("noexiste").style.display = "none";
+    document.getElementById("carre").style.display = "block";
+    document.getElementById("noexiste").style.display = "none";
+    $('#carre').prop("required", true);
   }else
   {
-  	$('#carre').prop("required", true);
-  	document.getElementById("carre").style.display = "none";
-  	document.getElementById("noexiste").style.display = "block";
-  	document.getElementById("maestro").style.display = "none";
+    $('#carre').prop("required", true);
+    document.getElementById("carre").style.display = "none";
+    document.getElementById("noexiste").style.display = "block";
   }
 });
 
 $('.buscartodos').click(function(){
     $('#usuario').removeAttr("required");
 });
+
+
+
+      $(document).ready(function(){
+      var consulta; 
+      //hacemos focus
+      $("#matri").focus();                                    
+      //comprobamos si se pulsa una tecla
+      $("#matri").keyup(function(e){
+         //obtenemos el texto introducido en el campo
+         consulta = $("#matri").val();                      
+         //hace la búsqueda
+         $("#resultado").delay(100).queue(function(n) {      
+                                       
+            $("#resultado").html('<img src="ajax-loader.gif" />');                    
+                  $.ajax({
+                        type: "POST",
+                        url: "existeusuario.php",
+                        data: "m="+consulta,
+                        dataType: "html",
+                        error: function(){
+                              alert("error petición ajax");
+                        },
+                        success: function(data){
+                              $("#resultado").html(data)
+                              if($("#resultado").text() == "Matrícula válida.")
+                              {
+                                document.getElementById("carre").style.display = "block";
+                                $('#carre').prop("required", true);
+                              }else if($("#resultado").text() == "Número de colaborador válido.")
+                              {
+                                $('#carre').removeAttr("required");
+                                document.getElementById("carre").style.display = "none";
+                              }else
+                              {
+                                $('#carre').prop("required", true);
+                                document.getElementById("carre").style.display = "none";
+                              }
+                              n();
+                        }
+              });
+                                           
+             });
+                                
+      });
+                          
+});
+
